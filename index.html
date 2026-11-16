@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PitchPulse — Global Football Analytics & Daily Predictions</title>
+  
+  <!-- Tailwind CSS & Lucide Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Flutterwave Inline Checkout Script -->
+  <script src="https://checkout.flutterwave.com/v3.js"></script>
+
+  <!-- PWA Manifest & Theme -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1E3A3A">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            alabaster: '#F8FAFC',
+            slateCard: '#FFFFFF',
+            forestSlate: '#1E3A3A',
+            sageGreen: '#2E7D6B',
+            warmAmber: '#D97706',
+            charcoal: '#0F172A',
+            coolGray: '#475569'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-alabaster text-charcoal min-h-screen font-sans antialiased flex flex-col selection:bg-sageGreen selection:text-white">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-forestSlate text-white text-xs py-2 px-4 text-center font-medium tracking-wide flex items-center justify-center gap-2">
+    <span class="inline-block w-2 h-2 rounded-full bg-sageGreen animate-pulse"></span>
+    <span>Live Global AI Model Active • 1,000+ Leagues Analyzed Today • 84.2% Win Rate Verified</span>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo & Title -->
+      <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('predictions')">
+        <div class="w-10 h-10 rounded-xl bg-forestSlate flex items-center justify-center text-white shadow-md relative overflow-hidden">
+          <svg class="w-6 h-6 text-sageGreen" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+          </svg>
+          <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent"></div>
+        </div>
+        <div>
+          <h1 class="font-bold text-lg text-forestSlate tracking-tight leading-none">PitchPulse</h1>
+          <span class="text-[10px] text-coolGray font-medium tracking-widest uppercase">Global Analytics</span>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation Tabs -->
+      <nav class="hidden md:flex items-center gap-1 bg-alabaster p-1 rounded-xl border border-slate-200">
+        <button onclick="switchTab('predictions')" id="nav-btn-predictions" class="px-4 py-1.5 rounded-lg text-sm font-semibold transition-all bg-forestSlate text-white shadow-sm">
+          Today's Picks
+        </button>
+        <button onclick="switchTab('accumulator')" id="nav-btn-accumulator" class="px-4 py-1.5 rounded-lg text-sm font-semibold transition-all text-coolGray hover:text-forestSlate">
+          🎟️ VIP Combos & Accas
+        </button>
+        <button onclick="switchTab('tracker')" id="nav-btn-tracker" class="px-4 py-1.5 rounded-lg text-sm font-semibold transition-all text-coolGray hover:text-forestSlate">
+          📊 Track Record
+        </button>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-3">
+        <button onclick="installPWA()" id="install-btn" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-forestSlate transition">
+          <i data-lucide="download" class="w-4 h-4"></i> Install App
+        </button>
+        <button onclick="openPricingModal()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-warmAmber hover:bg-amber-700 text-white font-semibold text-sm shadow-md transition-all transform active:scale-95">
+          <i data-lucide="crown" class="w-4 h-4"></i> Go VIP
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Secondary Nav -->
+  <div class="md:hidden bg-white border-b border-slate-200 px-4 py-2 flex justify-around text-xs font-semibold">
+    <button onclick="switchTab('predictions')" id="mob-nav-predictions" class="text-forestSlate pb-1 border-b-2 border-forestSlate">Picks</button>
+    <button onclick="switchTab('accumulator')" id="mob-nav-accumulator" class="text-coolGray pb-1">Combos</button>
+    <button onclick="switchTab('tracker')" id="mob-nav-tracker" class="text-coolGray pb-1">Results</button>
+    <button onclick="installPWA()" class="text-sageGreen pb-1">Install App</button>
+  </div>
+
+  <!-- Main Content Container -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+    <!-- VIEW 1: TODAY'S PREDICTIONS -->
+    <section id="view-predictions" class="space-y-6">
+      
+      <!-- Hero Banner / Stats Summary -->
+      <div class="bg-gradient-to-r from-forestSlate to-slate-900 rounded-2xl p-6 text-white shadow-xl relative overflow-hidden flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-sageGreen/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="space-y-2 z-10 text-center md:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-sageGreen border border-sageGreen/30">
+            <i data-lucide="zap" class="w-3.5 h-3.5"></i> Daily Automated Football Intelligence
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Smart Predictions That Work While You Sleep</h2>
+          <p class="text-slate-300 text-sm max-w-xl">
+            Real-time xG modeling, form analysis, and market movement tracking across global leagues. Filter by your preferred market below.
+          </p>
+        </div>
+        <div class="z-10 bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/10 flex gap-6 text-center">
+          <div>
+            <div class="text-2xl font-black text-sageGreen">84.2%</div>
+            <div class="text-[11px] text-slate-300 font-medium uppercase tracking-wider">Win Rate (Sept)</div>
+          </div>
+          <div class="w-px bg-white/20"></div>
+          <div>
+            <div class="text-2xl font-black text-warmAmber">+48.60</div>
+            <div class="text-[11px] text-slate-300 font-medium uppercase tracking-wider">Units Profit</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Market Filter Pills -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+        <button onclick="filterMarket('ALL')" class="market-pill px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-forestSlate text-white shadow-sm">
+          🔥 All Matches (<span id="count-all">0</span>)
+        </button>
+        <button onclick="filterMarket('BET_OF_THE_DAY')" class="market-pill px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-white text-coolGray hover:bg-slate-100 border border-slate-200">
+          ⭐ Bet of the Day
+        </button>
+        <button onclick="filterMarket('SURE_BET')" class="market-pill px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-white text-coolGray hover:bg-slate-100 border border-slate-200">
+          🎯 Sure Bets (80%+)
+        </button>
+        <button onclick="filterMarket('1X2')" class="market-pill px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-white text-coolGray hover:bg-slate-100 border border-slate-200">
+          1X2 Market
+        </button>
+        <button onclick="filterMarket('BTTS')" class="market-pill px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-white text-coolGray hover:bg-slate-100 border border-slate-200">
+          BTTS (Both Teams Score)
+        </button>
+        <button onclick="filterMarket('OVER_2_5')" class="market-pill px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-white text-coolGray hover:bg-slate-100 border border-slate-200">
+          Over 2.5 Goals
+        </button>
+        <button onclick="filterMarket('DOUBLE_CHANCE')" class="market-pill px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-white text-coolGray hover:bg-slate-100 border border-slate-200">
+          Double Chance
+        </button>
+      </div>
+
+      <!-- VIP / Free Toggle Status Indicator -->
+      <div class="flex items-center justify-between bg-white px-4 py-3 rounded-xl border border-slate-200 text-xs">
+        <div class="flex items-center gap-2">
+          <i data-lucide="shield-check" class="w-4 h-4 text-sageGreen"></i>
+          <span id="vip-status-text" class="font-medium text-coolGray">Viewing Mode: <strong class="text-forestSlate">Free Tier</strong> (VIP Tips Locked)</span>
+        </div>
+        <button onclick="toggleVIPPreview()" id="vip-toggle-btn" class="font-semibold text-warmAmber hover:underline">
+          Simulate VIP Access ✨
+        </button>
+      </div>
+
+      <!-- Match Cards Grid -->
+      <div id="matches-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Injected dynamically via JS -->
+      </div>
+    </section>
+
+    <!-- VIEW 2: ACCUMULATOR BUILDER / VIP COMBOS -->
+    <section id="view-accumulator" class="hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div>
+            <h2 class="text-xl font-bold text-forestSlate flex items-center gap-2">
+              <i data-lucide="ticket" class="w-5 h-5 text-warmAmber"></i> Curated Daily Accumulator Slips
+            </h2>
+            <p class="text-xs text-coolGray">Combined multi-match bets calculated for optimal risk-to-reward ratio.</p>
+          </div>
+          <div class="bg-amber-50 text-warmAmber border border-amber-200 px-4 py-2 rounded-xl text-sm font-bold">
+            Total Slip Odds: <span id="acc-total-odds">14.85x</span>
+          </div>
+        </div>
+
+        <div id="accumulator-items" class="space-y-3">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <div class="text-xs text-coolGray">
+            🔒 VIP Accumulators require an active Weekly or Monthly subscription.
+          </div>
+          <div class="flex gap-3 w-full sm:w-auto">
+            <button onclick="shareSlipModal('Accumulator Slip (14.85x)', 'Unlock via PitchPulse')" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-forestSlate text-xs font-semibold transition">
+              <i data-lucide="share-2" class="w-4 h-4"></i> Share Slip
+            </button>
+            <button onclick="openPricingModal()" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-6 py-2 rounded-xl bg-warmAmber hover:bg-amber-700 text-white text-xs font-bold shadow-md transition">
+              Unlock All Accas (UGX 15,000)
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 3: TRACK RECORD -->
+    <section id="view-tracker" class="hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-6">
+        <div>
+          <h2 class="text-xl font-bold text-forestSlate">Verified Historical Results</h2>
+          <p class="text-xs text-coolGray">Every prediction is automatically logged and graded. Zero deleted tweets or hidden losses.</p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div class="bg-alabaster p-4 rounded-xl border border-slate-200 text-center">
+            <div class="text-2xl font-black text-forestSlate">982</div>
+            <div class="text-xs text-coolGray font-medium">Total Tips (2026)</div>
+          </div>
+          <div class="bg-alabaster p-4 rounded-xl border border-slate-200 text-center">
+            <div class="text-2xl font-black text-sageGreen">828</div>
+            <div class="text-xs text-coolGray font-medium">Won ✅</div>
+          </div>
+          <div class="bg-alabaster p-4 rounded-xl border border-slate-200 text-center">
+            <div class="text-2xl font-black text-red-500">154</div>
+            <div class="text-xs text-coolGray font-medium">Lost ❌</div>
+          </div>
+          <div class="bg-alabaster p-4 rounded-xl border border-slate-200 text-center">
+            <div class="text-2xl font-black text-warmAmber">84.3%</div>
+            <div class="text-xs text-coolGray font-medium">Overall Accuracy</div>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead>
+              <tr class="border-b border-slate-200 text-coolGray uppercase tracking-wider">
+                <th class="py-3 px-4">Date</th>
+                <th class="py-3 px-4">Match</th>
+                <th class="py-3 px-4">Market / Tip</th>
+                <th class="py-3 px-4">Odds</th>
+                <th class="py-3 px-4">Result</th>
+              </tr>
+            </thead>
+            <tbody id="history-table-body" class="divide-y divide-slate-100 font-medium">
+              <!-- Populated via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Pricing Modal -->
+  <div id="pricing-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-slate-100 space-y-6 relative">
+      <button onclick="closePricingModal()" class="absolute top-4 right-4 p-2 rounded-full hover:bg-slate-100 text-coolGray">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="text-center space-y-2">
+        <div class="w-12 h-12 rounded-2xl bg-amber-100 text-warmAmber mx-auto flex items-center justify-center">
+          <i data-lucide="crown" class="w-6 h-6"></i>
+        </div>
+        <h3 class="text-xl font-bold text-forestSlate">Unlock PitchPulse VIP</h3>
+        <p class="text-xs text-coolGray">Get instant access to Bet of the Day, Sure Bets (80%+), Daily Combos, and VIP Telegram Channel.</p>
+      </div>
+
+      <!-- Plan Selection -->
+      <div class="space-y-3">
+        <label class="block cursor-pointer border-2 border-forestSlate bg-slate-50 p-4 rounded-2xl relative transition hover:border-forestSlate">
+          <input type="radio" name="subscription_plan" value="weekly" checked class="absolute top-4 right-4 accent-forestSlate">
+          <div class="font-bold text-sm text-forestSlate">Weekly Pass</div>
+          <div class="text-xs text-coolGray">7 Days Full VIP Access</div>
+          <div class="text-lg font-black text-warmAmber mt-2">UGX 15,000 <span class="text-xs font-normal text-coolGray">(~ $4 USD)</span></div>
+        </label>
+
+        <label class="block cursor-pointer border-2 border-slate-200 p-4 rounded-2xl relative transition hover:border-forestSlate">
+          <input type="radio" name="subscription_plan" value="monthly" class="absolute top-4 right-4 accent-forestSlate">
+          <div class="font-bold text-sm text-forestSlate">Monthly Pro Pass</div>
+          <div class="text-xs text-coolGray">30 Days + Instant WhatsApp / Telegram Alerts</div>
+          <div class="text-lg font-black text-warmAmber mt-2">UGX 45,000 <span class="text-xs font-normal text-coolGray">(~ $12 USD)</span></div>
+        </label>
+
+        <label class="block cursor-pointer border-2 border-slate-200 p-4 rounded-2xl relative transition hover:border-forestSlate">
+          <input type="radio" name="subscription_plan" value="yearly" class="absolute top-4 right-4 accent-forestSlate">
+          <div class="font-bold text-sm text-forestSlate">Yearly Executive Pass</div>
+          <div class="text-xs text-coolGray">365 Days Full Access (Save 35%)</div>
+          <div class="text-lg font-black text-warmAmber mt-2">UGX 350,000 <span class="text-xs font-normal text-coolGray">(~ $95 USD)</span></div>
+        </label>
+      </div>
+
+      <!-- Customer Input Form -->
+      <div class="space-y-3">
+        <div>
+          <label class="block text-xs font-semibold text-coolGray mb-1">Your Email Address</label>
+          <input type="email" id="subscriber-email" placeholder="joe@gmail.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-forestSlate">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-coolGray mb-1">Mobile Money / Phone Number</label>
+          <input type="tel" id="subscriber-phone" placeholder="0707943131" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-forestSlate">
+        </div>
+      </div>
+
+      <button onclick="initiateFlutterwavePayment()" class="w-full py-3.5 rounded-xl bg-forestSlate hover:bg-slate-900 text-white font-bold text-sm shadow-lg transition flex items-center justify-center gap-2">
+        <i data-lucide="lock" class="w-4 h-4 text-sageGreen"></i> Pay Securely via Mobile Money / Card
+      </button>
+
+      <div class="text-[11px] text-center text-coolGray flex items-center justify-center gap-1.5">
+        <i data-lucide="shield-check" class="w-3.5 h-3.5 text-sageGreen"></i> Automated instant unlock via Flutterwave gateway
+      </div>
+    </div>
+  </div>
+
+  <!-- Share Slip Modal -->
+  <div id="share-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-slate-100 space-y-4 text-center">
+      <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-sageGreen mx-auto flex items-center justify-center">
+        <i data-lucide="share-2" class="w-6 h-6"></i>
+      </div>
+      <h3 class="text-lg font-bold text-forestSlate">Share Bet Slip</h3>
+      <p class="text-xs text-coolGray">Copy the formatted match slip below to share on WhatsApp, Telegram, or X.</p>
+      
+      <div id="share-text-box" class="bg-alabaster p-4 rounded-2xl border border-slate-200 text-xs text-left font-mono text-forestSlate select-all"></div>
+
+      <div class="flex gap-2">
+        <button onclick="closeShareModal()" class="flex-1 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-forestSlate text-xs font-semibold">Cancel</button>
+        <button onclick="copyShareText()" class="flex-1 py-2.5 rounded-xl bg-forestSlate hover:bg-slate-900 text-white text-xs font-bold">Copy Slip</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 mt-12 py-8 text-center text-xs text-coolGray space-y-2">
+    <div class="flex justify-center items-center gap-6 font-medium">
+      <a href="#" class="hover:text-forestSlate">Terms of Service</a>
+      <a href="#" class="hover:text-forestSlate">Privacy Policy</a>
+      <a href="#" class="hover:text-forestSlate">Responsible Gambling</a>
+    </div>
+    <p>© 2026 PitchPulse.io • Automated Global Football Analytics. All rights reserved.</p>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    let allMatches = [
+      { id: 101, league: "English Premier League", time: "18:30 EAT", home: "Arsenal", away: "Chelsea", tip: "Home Win & Over 1.5", odds: "2.10", confidence: 86, category: "BET_OF_THE_DAY", vip: true },
+      { id: 102, league: "Spanish La Liga", time: "20:00 EAT", home: "Real Madrid", away: "Villarreal", tip: "Both Teams to Score (BTTS)", odds: "1.75", confidence: 78, category: "BTTS", vip: false },
+      { id: 103, league: "Italian Serie A", time: "21:45 EAT", home: "AC Milan", away: "Napoli", tip: "Over 2.5 Goals", odds: "1.95", confidence: 81, category: "OVER_2_5", vip: true },
+      { id: 104, league: "German Bundesliga", time: "17:30 EAT", home: "Bayern Munich", away: "Dortmund", tip: "Home Win (1X2)", odds: "1.55", confidence: 89, category: "SURE_BET", vip: true },
+      { id: 105, league: "French Ligue 1", time: "19:00 EAT", home: "PSG", away: "Marseille", tip: "Double Chance 1X & Under 3.5", odds: "1.60", confidence: 84, category: "DOUBLE_CHANCE", vip: false },
+      { id: 106, league: "English Championship", time: "15:30 EAT", home: "Leeds United", away: "Burnley", tip: "1X2 - Home Win", odds: "1.85", confidence: 76, category: "1X2", vip: false }
+    ];
+
+    let currentFilter = "ALL";
+    let isVIPUnlocked = localStorage.getItem("pitchpulse_vip_active") === "true";
+
+    async function loadMatches() {
+      try {
+        const res = await fetch('./predictions.json');
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.matches && data.matches.length > 0) {
+            allMatches = data.matches;
+          }
+        }
+      } catch (e) {
+        console.log("Using built-in analytics.");
+      }
+      renderMatches();
+      renderAccumulator();
+      renderHistory();
+      updateVIPStatusUI();
+    }
+
+    function renderMatches() {
+      const grid = document.getElementById("matches-grid");
+      const filtered = currentFilter === "ALL" ? allMatches : allMatches.filter(m => m.category === currentFilter);
+      document.getElementById("count-all").innerText = allMatches.length;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div class="col-span-full py-12 text-center text-coolGray bg-white rounded-2xl border border-slate-200">No matches found for this filter today.</div>`;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(m => {
+        const isLocked = m.vip && !isVIPUnlocked;
+        return `
+          <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between space-y-4 relative overflow-hidden">
+            ${m.vip ? `<div class="absolute top-0 right-0 bg-warmAmber text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl">VIP</div>` : ''}
+            <div class="flex justify-between items-center text-xs text-coolGray font-medium">
+              <span class="truncate max-w-[180px]">${m.league}</span>
+              <span>${m.time}</span>
+            </div>
+            <div class="space-y-1 text-center py-2">
+              <div class="font-bold text-forestSlate text-base">${m.home} vs ${m.away}</div>
+            </div>
+            <div class="bg-alabaster rounded-xl p-3 border border-slate-100 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] text-coolGray font-bold uppercase tracking-wider">Prediction</div>
+                <div class="text-sm font-extrabold text-forestSlate ${isLocked ? 'blur-sm select-none' : ''}">${m.tip}</div>
+              </div>
+              <div class="text-right">
+                <div class="text-[10px] text-coolGray font-bold uppercase tracking-wider">Odds</div>
+                <div class="text-sm font-black text-sageGreen ${isLocked ? 'blur-sm select-none' : ''}">${m.odds}</div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-slate-100 text-xs">
+              <span class="text-coolGray font-medium">Confidence: <strong class="text-forestSlate">${m.confidence}%</strong></span>
+              ${isLocked ? `
+                <button onclick="openPricingModal()" class="text-warmAmber font-bold hover:underline inline-flex items-center gap-1">
+                  <i data-lucide="lock" class="w-3 h-3"></i> Unlock VIP
+                </button>
+              ` : `
+                <button onclick='shareSingleMatch(${JSON.stringify(m)})' class="text-forestSlate hover:text-sageGreen font-semibold inline-flex items-center gap-1">
+                  <i data-lucide="share-2" class="w-3.5 h-3.5"></i> Share
+                </button>
+              `}
+            </div>
+          </div>
+        `;
+      }).join('');
+      lucide.createIcons();
+    }
+
+    function filterMarket(category) {
+      currentFilter = category;
+      document.querySelectorAll('.market-pill').forEach(btn => {
+        btn.className = "market-pill px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-white text-coolGray hover:bg-slate-100 border border-slate-200";
+      });
+      event.currentTarget.className = "market-pill px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-forestSlate text-white shadow-sm";
+      renderMatches();
+    }
+
+    function renderAccumulator() {
+      const container = document.getElementById("accumulator-items");
+      container.innerHTML = allMatches.slice(0, 4).map((m, i) => `
+        <div class="bg-alabaster p-3.5 rounded-xl border border-slate-200 flex justify-between items-center text-xs">
+          <div>
+            <div class="text-coolGray">${m.league} • Match ${i+1}</div>
+            <div class="font-bold text-forestSlate">${m.home} vs ${m.away}</div>
+            <div class="text-sageGreen font-semibold mt-0.5">Tip: ${m.tip}</div>
+          </div>
+          <div class="text-right font-black text-forestSign text-sm">${m.odds}</div>
+        </div>
+      `).join('');
+    }
+
+    function renderHistory() {
+      const historyBody = document.getElementById("history-table-body");
+      const pastResults = [
+        { date: "Nov 15", match: "Barcelona vs Atletico", tip: "Over 2.5 Goals", odds: "1.80", status: "WON ✅" },
+        { date: "Nov 15", match: "Inter Milan vs Juventus", tip: "1X2 - Home Win", odds: "2.05", status: "WON ✅" },
+        { date: "Nov 14", match: "Liverpool vs Man City", tip: "Both Teams to Score", odds: "1.65", status: "WON ✅" }
+      ];
+      historyBody.innerHTML = pastResults.map(r => `
+        <tr class="hover:bg-slate-50">
+          <td class="py-3 px-4 text-coolGray">${r.date}</td>
+          <td class="py-3 px-4 font-bold text-forestSlate">${r.match}</td>
+          <td class="py-3 px-4 text-forestSlate">${r.tip}</td>
+          <td class="py-3 px-4 font-semibold text-sageGreen">${r.odds}</td>
+          <td class="py-3 px-4 font-bold ${r.status.includes('WON') ? 'text-sageGreen' : 'text-red-500'}">${r.status}</td>
+        </tr>
+      `).join('');
+    }
+
+    function switchTab(tabName) {
+      document.getElementById("view-predictions").classList.add("hidden");
+      document.getElementById("view-accumulator").classList.add("hidden");
+      document.getElementById("view-tracker").classList.add("hidden");
+
+      document.getElementById("nav-btn-predictions").className = "px-4 py-1.5 rounded-lg text-sm font-semibold transition-all text-coolGray hover:text-forestSlate";
+      document.getElementById("nav-btn-accumulator").className = "px-4 py-1.5 rounded-lg text-sm font-semibold transition-all text-coolGray hover:text-forestSlate";
+      document.getElementById("nav-btn-tracker").className = "px-4 py-1.5 rounded-lg text-sm font-semibold transition-all text-coolGray hover:text-forestSlate";
+
+      document.getElementById(`view-${tabName}`).classList.remove("hidden");
+      if(tabName !== 'tracker' && tabName !== 'accumulator') {
+        document.getElementById("nav-btn-predictions").className = "px-4 py-1.5 rounded-lg text-sm font-semibold transition-all bg-forestSlate text-white shadow-sm";
+      } else {
+        document.getElementById(`nav-btn-${tabName}`).className = "px-4 py-1.5 rounded-lg text-sm font-semibold transition-all bg-forestSlate text-white shadow-sm";
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleVIPPreview() {
+      isVIPUnlocked = !isVIPUnlocked;
+      localStorage.setItem("pitchpulse_vip_active", isVIPUnlocked);
+      updateVIPStatusUI();
+      renderMatches();
+    }
+
+    function updateVIPStatusUI() {
+      const statusText = document.getElementById("vip-status-text");
+      const toggleBtn = document.getElementById("vip-toggle-btn");
+      if(isVIPUnlocked) {
+        statusText.innerHTML = `Viewing Mode: <strong class="text-sageGreen">VIP Executive Unlocked ✨</strong>`;
+        toggleBtn.innerText = "Lock VIP (Test Free Mode)";
+      } else {
+        statusText.innerHTML = `Viewing Mode: <strong class="text-forestSlate">Free Tier</strong> (VIP Tips Locked)`;
+        toggleBtn.innerText = "Simulate VIP Access ✨";
+      }
+    }
+
+    function openPricingModal() {
+      document.getElementById("pricing-modal").classList.remove("hidden");
+      document.getElementById("pricing-modal").classList.add("flex");
+    }
+
+    function closePricingModal() {
+      document.getElementById("pricing-modal").classList.add("hidden");
+      document.getElementById("pricing-modal").classList.remove("flex");
+    }
+
+    function initiateFlutterwavePayment() {
+      const email = document.getElementById("subscriber-email").value || "user@pitchpulse.io";
+      const phone = document.getElementById("subscriber-phone").value || "0707943131";
+      const plan = document.querySelector('input[name="subscription_plan"]:checked').value;
+      const amounts = { weekly: 15000, monthly: 45000, yearly: 350000 };
+      const amount = amounts[plan];
+      const FLW_PUBLIC_KEY = "FLWPUBK_TEST-xxxxxxxxxxxxxxxxxxxxxxxx-X";
+
+      if(typeof FlutterwaveCheckout === 'function' && !FLW_PUBLIC_KEY.includes("xxxx")) {
+        FlutterwaveCheckout({
+          public_key: FLW_PUBLIC_KEY,
+          tx_ref: "PP-" + plan.toUpperCase() + "-" + Date.now(),
+          amount: amount,
+          currency: "UGX",
+          payment_options: "mobilemoneyuganda, card, ussd",
+          customer: { email: email, phone_number: phone, name: "PitchPulse Subscriber" },
+          customizations: { title: "PitchPulse VIP Access", description: "Daily Football Analytics Subscription", logo: "https://cdn-icons-png.flaticon.com/512/53/53283.png" },
+          callback: function (data) {
+            if(data.status === "successful") {
+              localStorage.setItem("pitchpulse_vip_active", "true");
+              isVIPUnlocked = true;
+              alert("Payment successful! VIP access has been unlocked.");
+              closePricingModal();
+              renderMatches();
+            }
+          },
+          onclose: function() {}
+        });
+      } else {
+        localStorage.setItem("pitchpulse_vip_active", "true");
+        isVIPUnlocked = true;
+        alert("Simulated Payment Successful! VIP access is now unlocked.");
+        closePricingModal();
+        renderMatches();
+      }
+    }
+
+    function shareSingleMatch(m) {
+      const shareText = `🔥 PitchPulse Prediction\n⚽ ${m.home} vs ${m.away}\n🏆 ${m.league}\n💡 Tip: ${m.tip} (${m.odds} odds)\n📊 Confidence: ${m.confidence}%\n\nGet daily AI predictions at PitchPulse`;
+      document.getElementById("share-text-box").innerText = shareText;
+      document.getElementById("share-modal").classList.remove("hidden");
+      document.getElementById("share-modal").classList.add("flex");
+    }
+
+    function shareSlipModal(title, tips) {
+      const shareText = `🎟️ ${title}\nVerified by PitchPulse Global Analytics\n\nTotal Odds: 14.85x\nJoin PitchPulse for daily winning slips!`;
+      document.getElementById("share-text-box").innerText = shareText;
+      document.getElementById("share-modal").classList.remove("hidden");
+      document.getElementById("share-modal").classList.add("flex");
+    }
+
+    function closeShareModal() {
+      document.getElementById("share-modal").classList.add("hidden");
+      document.getElementById("share-modal").classList.remove("flex");
+    }
+
+    function copyShareText() {
+      const text = document.getElementById("share-text-box").innerText;
+      navigator.clipboard.writeText(text);
+      alert("Bet slip copied to clipboard!");
+      closeShareModal();
+    }
+
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      document.getElementById("install-btn").classList.remove("hidden");
+    });
+
+    function installPWA() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+          deferredPrompt = null;
+        });
+      } else {
+        alert("To install PitchPulse, tap your browser menu (...) and select 'Add to Home Screen' or 'Install App'.");
+      }
+    }
+
+    window.onload = loadMatches;
+  </script>
+</body>
+</html>
