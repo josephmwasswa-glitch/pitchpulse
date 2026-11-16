@@ -1,0 +1,16 @@
+{
+  "name": "PitchPulse — Global Football Analytics",
+  "short_name": "PitchPulse",
+  "description": "Automated daily football predictions across 1X2, BTTS, Over 2.5, Double Chance, and Accumulators.",
+  "start_url": "/pitchpulse/",
+  "display": "standalone",
+  "background_color": "#F8FAFC",
+  "theme_color": "#1E3A3A",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/53/53283.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
