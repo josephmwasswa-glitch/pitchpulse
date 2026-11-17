@@ -18,15 +18,12 @@ def scrape_sportsmole():
         soup = BeautifulSoup(res.text, "html.parser")
         for match_box in soup.select(".match_preview, .preview_link_box, li"):
             text = match_box.text.strip()
-            # Look for scoreline patterns like "Sports Mole says: Arsenal 2-1 Chelsea"
             if "Sports Mole says:" in text or "vs" in text:
                 link = match_box.find("a")
                 if link and link.get("href"):
                     preview_url = "https://www.sportsmole.co.uk" + link["href"]
                     sub_res = requests.get(preview_url, headers=HEADERS_WEB, timeout=10)
                     sub_soup = BeautifulSoup(sub_res.text, "html.parser")
-                    
-                    # Extract title / predicted score paragraph
                     h1 = sub_soup.find("h1")
                     score_p = sub_soup.select_one(".match_prediction, .article_body p")
                     if h1:
@@ -110,15 +107,14 @@ def fetch_real_fixtures():
             a_prob = int(pct.get("away", "33%").replace("%", ""))
             max_prob = max(h_prob, d_prob, a_prob)
 
-            pp_tip = "1" if h_prob == max_pop if 'h_prob' in locals() else "1"
+            pp_tip = "1" if h_prob == max_prob else ("2" if a_prob == max_prob else "X")
             fb = forebet_data.get(key, {"tip": "1", "score": "2-1"})
             sv = soccervista_data.get(key, "1 (Over 2.5)")
             
-            # Find matching Sports Mole preview by team names
             sm_score = f"{home} 2-1 {away}"
             for sm_key, sm_val in sportsmole_data.items():
                 if home.lower() in sm_key and away.lower() in sm_key:
-                    sm_score = sm_val[:60] # snippet
+                    sm_score = sm_val[:60]
                     break
 
             agreed = 2
