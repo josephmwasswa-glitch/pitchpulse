@@ -84,7 +84,12 @@ def fetch_real_fixtures():
             timeout=15
         ).json()
 
-        for item in resp.get("response", [])[:30]:
+        for item in resp.get("response", []):
+            fixture_status = item["fixture"]["status"]["short"]
+            # Only pull upcoming or scheduled matches (ignore finished or live matches if needed)
+            if fixture_status not in ["NS", "TBD"]:
+                continue
+
             fid = item["fixture"]["id"]
             home = item["teams"]["home"]["name"]
             away = item["teams"]["away"]["name"]
@@ -106,7 +111,22 @@ def fetch_real_fixtures():
             a_prob = int(pct.get("away", "33%").replace("%", ""))
             max_prob = max(h_prob, d_prob, a_prob)
 
-            pp_tip = "1" if h_prob == max_prob else ("2" if a_prob == max_prob else "X")
+            advice = p.get("advice", "").lower()
+
+            # Strict probability-backed market selection avoiding spam double chances
+            if "home win" in advice or h_prob >= 58:
+                market_tip = "Home Win & Over 1.5" if max_prob >= 70 else "Home Win (1X2)"
+                odds_val = "1.85"
+            elif "away win" in advice or a_prob >= 55:
+                market_tip = "Away Win (2)"
+                odds_val = "2.05"
+            elif "under" in advice or (h_prob + a_prob < 70):
+                market_tip = "Under 2.5 Goals"
+                odds_val = "1.70"
+            else:
+                market_tip = "Both Teams to Score (BTTS)"
+                odds_val = "1.75"
+
             fb = forebet_data.get(key, {"tip": "1", "score": "2-1"})
             sv = soccervista_data.get(key, "1 (Over 2.5)")
             
@@ -128,8 +148,8 @@ def fetch_real_fixtures():
                 "time": item["fixture"]["date"][11:16] + " UTC",
                 "home": home,
                 "away": away,
-                "tip": p.get("advice", "Home Win & Over 1.5"),
-                "odds": "1.85",
+                "tip": market_tip,
+                "odds": odds_val,
                 "confidence": max(max_prob, 65),
                 "category": "SURE_BET" if max_prob >= 75 else "1X2",
                 "vip": agreed >= 4 or max_prob >= 75,
@@ -138,9 +158,13 @@ def fetch_real_fixtures():
                     "soccerVista": sv,
                     "sportsMole": sm_score,
                     "forebet": f"{fb.get('tip', '1')} ({max_prob}%)",
-                    "pitchPulse": p.get("advice", "Home Win")
+                    "pitchPulse": p.get("advice", "Standard Market")
                 }
             })
+
+            # Limit to top 15 clean matches per day to keep the UI sharp and fast
+            if len(day_matches) >= 15:
+                break
 
         all_days[target_date] = day_matches
 
