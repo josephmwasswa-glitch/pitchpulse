@@ -1,167 +1,162 @@
-import os
-import json
-import requests
-from bs4 import BeautifulSoup
-from datetime import datetime, timedelta, timezone
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PitchPulse — Live Multi-Source Consensus Predictions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1E3A3A">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            alabaster: '#F8FAFC',
+            slateCard: '#FFFFFF',
+            forestSlate: '#1E3A3A',
+            sageGreen: '#2E7D6B',
+            warmAmber: '#D97706',
+            charcoal: '#0F172A',
+            coolGray: '#475569'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-alabaster text-charcoal min-h-screen font-sans antialiased flex flex-col">
 
-API_KEY = os.environ.get("API_FOOTBALL_KEY", "")
-HEADERS_API = {"x-apisports-key": API_KEY}
-HEADERS_WEB = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
-}
+  <div class="bg-forestSlate text-white text-xs py-2 px-4 text-center font-medium flex items-center justify-center gap-2">
+    <span class="inline-block w-2 h-2 rounded-full bg-sageGreen animate-pulse"></span>
+    <span>Live Multi-Source Engine Active • SoccerVista, Sports Mole, Forebet & AI</span>
+  </div>
 
-def scrape_sportsmole():
-    previews = {}
-    try:
-        res = requests.get("https://www.sportsmole.co.uk/football/preview/", headers=HEADERS_WEB, timeout=15)
-        soup = BeautifulSoup(res.text, "html.parser")
-        for match_box in soup.select(".match_preview, .preview_link_box, li"):
-            text = match_box.text.strip()
-            if "Sports Mole says:" in text or "vs" in text:
-                link = match_box.find("a")
-                if link and link.get("href"):
-                    preview_url = "https://www.sportsmole.co.uk" + link["href"]
-                    sub_res = requests.get(preview_url, headers=HEADERS_WEB, timeout=10)
-                    sub_soup = BeautifulSoup(sub_res.text, "html.parser")
-                    h1 = sub_soup.find("h1")
-                    score_p = sub_soup.select_one(".match_prediction, .article_body p")
-                    if h1:
-                        previews[h1.text.strip().lower()] = score_p.text.strip() if score_p else "Competitive fixture expected."
-    except Exception as e:
-        print(f"Sports Mole scrape skipped: {e}")
-    return previews
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3 cursor-pointer">
+        <div class="w-10 h-10 rounded-xl bg-forestSlate flex items-center justify-center text-white shadow-md">
+          <svg class="w-6 h-6 text-sageGreen" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+          </svg>
+        </div>
+        <div>
+          <h1 class="font-bold text-lg text-forestSlate tracking-tight leading-none">PitchPulse</h1>
+          <span class="text-[10px] text-coolGray font-medium uppercase tracking-widest">Live Engine</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <button onclick="alert('VIP Executive Unlocked')" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-warmAmber hover:bg-amber-700 text-white font-semibold text-sm shadow-md transition">
+          <i data-lucide="crown" class="w-4 h-4"></i> Go VIP
+        </button>
+      </div>
+    </div>
+  </header>
 
-def scrape_forebet():
-    picks = {}
-    try:
-        res = requests.get("https://www.forebet.com/en/football-tips-and-predictions-for-today", headers=HEADERS_WEB, timeout=15)
-        soup = BeautifulSoup(res.text, "html.parser")
-        for row in soup.select(".rcnt"):
-            home = row.select_one(".homeTeam")
-            away = row.select_one(".awayTeam")
-            pred = row.select_one(".predict .forepr")
-            score = row.select_one(".ex_sc")
-            if home and away and pred:
-                key = f"{home.text.strip().lower()}_vs_{away.text.strip().lower()}"
-                picks[key] = {
-                    "tip": pred.text.strip(),
-                    "score": score.text.strip() if score else "1-0"
-                }
-    except Exception as e:
-        print(f"Forebet scrape skipped: {e}")
-    return picks
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+    <div class="flex items-center justify-between bg-white p-3 rounded-2xl border border-slate-200 shadow-sm overflow-x-auto">
+      <div class="flex items-center gap-2">
+        <i data-lucide="calendar" class="w-4 h-4 text-sageGreen"></i>
+        <span class="text-xs font-bold text-forestSlate">Fixture Schedule:</span>
+      </div>
+      <div id="day-tabs-container" class="flex items-center gap-2"></div>
+    </div>
 
-def scrape_soccervista():
-    picks = {}
-    try:
-        res = requests.get("https://www.soccervista.com/", headers=HEADERS_WEB, timeout=15)
-        soup = BeautifulSoup(res.text, "html.parser")
-        for row in soup.select("tr.predict"):
-            cols = [c.text.strip() for c in row.find_all("td")]
-            if len(cols) >= 7:
-                key = f"{cols[2].lower()}_vs_{cols[4].lower()}"
-                picks[key] = f"{cols[5]} ({cols[6]})"
-    except Exception as e:
-        print(f"SoccerVista scrape skipped: {e}")
-    return picks
+    <section id="view-predictions" class="space-y-6">
+      <div id="matches-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="col-span-full py-12 text-center text-coolGray bg-white rounded-2xl border border-slate-200">Loading live matches...</div>
+      </div>
+    </section>
+  </main>
 
-def fetch_real_fixtures():
-    forebet_data = scrape_forebet()
-    soccervista_data = scrape_soccervista()
-    sportsmole_data = scrape_sportsmole()
-    all_days = {}
+  <script>
+    lucide.createIcons();
 
-    for offset in range(3):
-        target_date = (datetime.now(timezone.utc) + timedelta(days=offset)).strftime("%Y-%m-%d")
-        day_matches = []
+    const todayDate = new Date();
+    const dateMap = {
+      0: todayDate.toISOString().split('T')[0],
+      1: new Date(todayDate.getTime() + 86400000).toISOString().split('T')[0],
+      2: new Date(todayDate.getTime() + 172800000).toISOString().split('T')[0]
+    };
 
-        if not API_KEY:
-            continue
+    let selectedDayIndex = 0;
+    let masterFixtures = {};
 
-        resp = requests.get(
-            f"https://v3.football.api-sports.io/fixtures?date={target_date}",
-            headers=HEADERS_API,
-            timeout=15
-        ).json()
+    async function initApp() {
+      try {
+        const res = await fetch('./predictions.json?t=' + Date.now());
+        const data = await res.json();
+        masterFixtures = data.fixtures_by_date || {};
+      } catch (err) {
+        console.error("Using fallback data:", err);
+      }
+      renderDayTabs();
+      renderMatches();
+    }
 
-        for item in resp.get("response", [])[:25]:
-            fid = item["fixture"]["id"]
-            home = item["teams"]["home"]["name"]
-            away = item["teams"]["away"]["name"]
-            key = f"{home.lower()}_vs_{away.lower()}"
+    function renderDayTabs() {
+      const container = document.getElementById("day-tabs-container");
+      const labels = ["Today", "Tomorrow", "In 2 Days"];
+      container.innerHTML = [0, 1, 2].map(i => `
+        <button onclick="switchDay(${i})" class="px-3 py-1.5 rounded-xl text-xs font-bold transition ${selectedDayIndex === i ? 'bg-forestSlate text-white shadow-sm' : 'bg-slate-100 text-coolGray hover:bg-slate-200'}">
+          ${labels[i]} (${dateMap[i]})
+        </button>
+      `).join('');
+    }
 
-            pred_resp = requests.get(
-                f"https://v3.football.api-sports.io/predictions?fixture={fid}",
-                headers=HEADERS_API,
-                timeout=15
-            ).json()
+    function switchDay(index) {
+      selectedDayIndex = index;
+      renderDayTabs();
+      renderMatches();
+    }
 
-            if not pred_resp.get("response"):
-                continue
+    function renderMatches() {
+      const grid = document.getElementById("matches-grid");
+      const currentDateKey = dateMap[selectedDayIndex];
+      const dayFixtures = masterFixtures[currentDateKey] || [];
 
-            p = pred_resp["response"][0]["predictions"]
-            pct = p.get("percent", {})
-            h_prob = int(pct.get("home", "33%").replace("%", ""))
-            d_prob = int(pct.get("draw", "33%").replace("%", ""))
-            a_prob = int(pct.get("away", "33%").replace("%", ""))
-            max_prob = max(h_prob, d_prob, a_prob)
+      if (dayFixtures.length === 0) {
+        grid.innerHTML = `<div class="col-span-full py-12 text-center text-coolGray bg-white rounded-2xl border border-slate-200">No fixtures available for ${currentDateKey}. Run your GitHub Actions workflow to populate data.</div>`;
+        return;
+      }
 
-            # Assign clean, professional market tips based on true probabilities
-            if h_prob >= 55:
-                market_tip = f"Home Win ({home})"
-                odds_val = "1.75"
-            elif a_prob >= 50:
-                market_tip = f"Away Win ({away})"
-                odds_val = "2.10"
-            elif h_prob + a_prob < 75:
-                market_tip = "Under 2.5 Goals"
-                odds_val = "1.65"
-            else:
-                market_tip = "Both Teams to Score (BTTS)"
-                odds_val = "1.80`"
+      grid.innerHTML = dayFixtures.map(m => `
+        <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-4 relative">
+          ${m.vip ? `<div class="absolute top-0 right-0 bg-warmAmber text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl">VIP</div>` : ''}
+          <div class="flex justify-between items-center text-[11px] text-coolGray font-medium">
+            <span>${m.league}</span>
+            <span class="text-forestSlate font-semibold">${m.time}</span>
+          </div>
+          <div class="text-center py-1 space-y-1.5">
+            <div class="font-bold text-forestSlate text-base">${m.home} vs ${m.away}</div>
+            <div class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-sageGreen border border-emerald-200">
+              <i data-lucide="check-circle-2" class="w-3 h-3"></i> ${m.consensusCount}/4 Sources Agree
+            </div>
+          </div>
+          <div class="bg-alabaster rounded-xl p-3 border border-slate-200 flex items-center justify-between">
+            <div>
+              <div class="text-[10px] text-coolGray font-bold uppercase">Consensus Pick</div>
+              <div class="text-sm font-extrabold text-forestSlate">${m.tip}</div>
+            </div>
+            <div class="text-right">
+              <div class="text-[10px] text-coolGray font-bold uppercase">Odds</div>
+              <div class="text-sm font-black text-sageGreen">${m.odds}</div>
+            </div>
+          </div>
+          <div class="bg-slate-50 rounded-xl p-3 border border-slate-100 space-y-1 text-[11px]">
+            <div class="text-[10px] font-bold text-coolGray uppercase mb-1">Engine Breakdown:</div>
+            <div class="flex justify-between"><span class="text-coolGray">SoccerVista:</span><span class="font-bold text-forestSlate">${m.sources.soccerVista}</span></div>
+            <div class="flex justify-between"><span class="text-coolGray">Sports Mole:</span><span class="font-bold text-warmAmber">${m.sources.sportsMole}</span></div>
+            <div class="flex justify-between"><span class="text-coolGray">Forebet:</span><span class="font-bold text-forestSlate">${m.sources.forebet}</span></div>
+            <div class="flex justify-between"><span class="text-coolGray">PitchPulse AI:</span><span class="font-bold text-sageGreen">${m.sources.pitchPulse}</span></div>
+          </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
 
-            fb = forebet_data.get(key, {"tip": "1", "score": "2-1"})
-            sv = soccervista_data.get(key, "1 (Over 2.5)")
-            
-            sm_score = f"{home} 2-1 {away}"
-            for sm_key, sm_val in sportsmole_data.items():
-                if home.lower() in sm_key and away.lower() in sm_key:
-                    sm_score = sm_val[:60]
-                    break
-
-            agreed = 2
-            if fb.get("tip") == "1":
-                agreed += 1
-            if sv.startswith("1"):
-                agreed += 1
-
-            day_matches.append({
-                "id": fid,
-                "league": item["league"]["name"],
-                "time": item["fixture"]["date"][11:16] + " UTC",
-                "home": home,
-                "away": away,
-                "tip": market_tip,
-                "odds": odds_val,
-                "confidence": max(max_prob, 65),
-                "category": "SURE_BET" if max_prob >= 70 else "1X2",
-                "vip": agreed >= 4 or max_prob >= 75,
-                "consensusCount": agreed,
-                "sources": {
-                    "soccerVista": sv,
-                    "sportsMole": sm_score,
-                    "forebet": f"{fb.get('tip', '1')} ({max_prob}%)",
-                    "pitchPulse": p.get("advice", "Standard Market")
-                }
-            })
-
-        all_days[target_date] = day_matches
-
-    with open("predictions.json", "w") as f:
-        json.dump({
-            "updated_at": datetime.now(timezone.utc).isoformat(),
-            "fixtures_by_date": all_days
-        }, f, indent=2)
-
-if __name__ == "__main__":
-    fetch_real_fixtures()
+    window.onload = initApp;
+  </script>
+</body>
+</html>
