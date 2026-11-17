@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PitchPulse — Today's Multi-Source Consensus Predictions</title>
+  <title>PitchPulse — Auto-Rolling Multi-Source Consensus Predictions</title>
   
+  <!-- Tailwind CSS & Lucide Icons -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Flutterwave Inline Checkout Script -->
   <script src="https://checkout.flutterwave.com/v3.js"></script>
+
+  <!-- PWA Manifest & Theme -->
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#1E3A3A">
 
@@ -17,6 +22,7 @@
         extend: {
           colors: {
             alabaster: '#F8FAFC',
+            slateCard: '#FFFFFF',
             forestSlate: '#1E3A3A',
             sageGreen: '#2E7D6B',
             warmAmber: '#D97706',
@@ -28,248 +34,432 @@
     }
   </script>
 </head>
-<body class="bg-alabaster text-charcoal min-h-screen font-sans antialiased flex flex-col">
+<body class="bg-alabaster text-charcoal min-h-screen font-sans antialiased flex flex-col selection:bg-sageGreen selection:text-white">
 
   <!-- Top Announcement Bar -->
-  <div class="bg-forestSlate text-white text-xs py-2 px-4 text-center font-medium flex items-center justify-center gap-2">
+  <div class="bg-forestSlate text-white text-xs py-2 px-4 text-center font-medium tracking-wide flex items-center justify-center gap-2">
     <span class="inline-block w-2 h-2 rounded-full bg-sageGreen animate-pulse"></span>
-    <span id="header-date-badge">Multi-Source Consensus Active • Today's Upcoming Matches</span>
+    <span id="header-date-label">Auto-Rolling Engine Active • Today's Multi-Source Consensus Live</span>
   </div>
 
-  <!-- Header -->
+  <!-- Main Navigation Header -->
   <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <div class="flex items-center gap-3 cursor-pointer">
-        <div class="w-10 h-10 rounded-xl bg-forestSlate flex items-center justify-center text-white shadow-md">
+      
+      <!-- Brand Logo & Title -->
+      <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('predictions')">
+        <div class="w-10 h-10 rounded-xl bg-forestSlate flex items-center justify-center text-white shadow-md relative overflow-hidden">
           <svg class="w-6 h-6 text-sageGreen" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
           </svg>
         </div>
         <div>
-          <h1 class="font-bold text-lg text-forestSlate leading-none">PitchPulse</h1>
-          <span class="text-[10px] text-coolGray font-medium tracking-widest uppercase">Consensus Engine</span>
+          <h1 class="font-bold text-lg text-forestSlate tracking-tight leading-none">PitchPulse</h1>
+          <span class="text-[10px] text-coolGray font-medium tracking-widest uppercase">Auto-Rolling Engine</span>
         </div>
       </div>
+
+      <!-- Desktop Navigation Tabs -->
+      <nav class="hidden md:flex items-center gap-1 bg-alabaster p-1 rounded-xl border border-slate-200">
+        <button onclick="switchTab('predictions')" id="nav-btn-predictions" class="px-4 py-1.5 rounded-lg text-sm font-semibold transition-all bg-forestSlate text-white shadow-sm">
+          Today's Picks
+        </button>
+        <button onclick="switchTab('accumulator')" id="nav-btn-accumulator" class="px-4 py-1.5 rounded-lg text-sm font-semibold transition-all text-coolGray hover:text-forestSlate">
+          🎟️ VIP Combos & Accas
+        </button>
+        <button onclick="switchTab('tracker')" id="nav-btn-tracker" class="px-4 py-1.5 rounded-lg text-sm font-semibold transition-all text-coolGray hover:text-forestSlate">
+          📊 Track Record
+        </button>
+      </nav>
+
+      <!-- Action Buttons -->
       <div class="flex items-center gap-3">
-        <button onclick="openPricingModal()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-warmAmber hover:bg-amber-700 text-white font-semibold text-sm shadow-md">
+        <button onclick="installPWA()" id="install-btn" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-forestSlate transition">
+          <i data-lucide="download" class="w-4 h-4"></i> Install App
+        </button>
+        <button onclick="openPricingModal()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-warmAmber hover:bg-amber-700 text-white font-semibold text-sm shadow-md transition-all transform active:scale-95">
           <i data-lucide="crown" class="w-4 h-4"></i> Go VIP
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Main Content -->
+  <!-- Mobile Secondary Nav -->
+  <div class="md:hidden bg-white border-b border-slate-200 px-4 py-2 flex justify-around text-xs font-semibold">
+    <button onclick="switchTab('predictions')" class="text-forestSlate pb-1 border-b-2 border-forestSlate">Picks</button>
+    <button onclick="switchTab('accumulator')" class="text-coolGray pb-1">Combos</button>
+    <button onclick="switchTab('tracker')" class="text-coolGray pb-1">Results</button>
+    <button onclick="installPWA()" class="text-sageGreen pb-1">Install App</button>
+  </div>
+
+  <!-- Main Content Container -->
   <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
-    
-    <!-- Hero Banner -->
-    <div class="bg-gradient-to-r from-forestSlate to-slate-900 rounded-2xl p-6 text-white shadow-xl flex flex-col md:flex-row justify-between items-center gap-6">
-      <div class="space-y-2 text-center md:text-left">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-sageGreen border border-sageGreen/30">
-          <i data-lucide="layers" class="w-3.5 h-3.5"></i> SoccerVista • Sports Mole • Forebet • PitchPulse AI
-        </div>
-        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Today's Upcoming Match Predictions</h2>
-        <p class="text-slate-300 text-sm max-w-xl">
-          Cross-checking analytical previews, mathematical probabilities, and AI models for today's fixtures.
-        </p>
+
+    <!-- Day Selector Tabs (Auto-Rolling) -->
+    <div class="flex items-center justify-between bg-white p-3 rounded-2xl border border-slate-200 shadow-sm overflow-x-auto">
+      <div class="flex items-center gap-2">
+        <i data-lucide="calendar" class="w-4 h-4 text-sageGreen"></i>
+        <span class="text-xs font-bold text-forestSlate">Fixture Schedule:</span>
       </div>
-      <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/10 flex gap-6 text-center">
+      <div id="day-tabs-container" class="flex items-center gap-2">
+        <!-- Injected dynamically by JS for Today, Tomorrow, +2 Days -->
+      </div>
+    </div>
+
+    <!-- VIEW 1: TODAY'S PREDICTIONS -->
+    <section id="view-predictions" class="space-y-6">
+      
+      <!-- Hero Banner -->
+      <div class="bg-gradient-to-r from-forestSlate to-slate-900 rounded-2xl p-6 text-white shadow-xl relative overflow-hidden flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="space-y-2 z-10 text-center md:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-sageGreen border border-sageGreen/30">
+            <i data-lucide="zap" class="w-3.5 h-3.5"></i> Automated Cross-Verification (SoccerVista + Sports Mole + Forebet + AI)
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight" id="hero-title">Predictions for Today</h2>
+          <p class="text-slate-300 text-sm max-w-xl">
+            Fixtures automatically roll over to upcoming days with fresh multi-source consensus odds and AI confidence ratings.
+          </p>
+        </div>
+        <div class="z-10 bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/10 flex gap-6 text-center">
+          <div>
+            <div class="text-2xl font-black text-sageGreen">86.4%</div>
+            <div class="text-[11px] text-slate-300 font-medium uppercase tracking-wider">Consensus Hit</div>
+          </div>
+          <div class="w-px bg-white/20"></div>
+          <div>
+            <div class="text-2xl font-black text-warmAmber">+54.20</div>
+            <div class="text-[11px] text-slate-300 font-medium uppercase tracking-wider">Units Profit</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Source Filter Bar -->
+      <div class="bg-white p-3 rounded-2xl border border-slate-200 flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-2 text-xs font-bold text-forestSlate">
+          <i data-lucide="filter" class="w-4 h-4 text-sageGreen"></i> Filter Engine:
+        </div>
+        <div class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0">
+          <button onclick="filterSource('ALL')" class="source-pill px-3 py-1.5 rounded-lg text-xs font-bold bg-forestSlate text-white">All Sources</button>
+          <button onclick="filterSource('CONSENSUS_4')" class="source-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-50 text-sageGreen border border-emerald-200 hover:bg-emerald-100">🔥 4/4 Unanimous</button>
+          <button onclick="filterSource('SOCCERVISTA')" class="source-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-coolGray hover:bg-slate-200">SoccerVista</button>
+          <button onclick="filterSource('SPORTSMOLE')" class="source-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-coolGray hover:bg-slate-200">Sports Mole</button>
+          <button onclick="filterSource('FOREBET')" class="source-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-coolGray hover:bg-slate-200">Forebet</button>
+        </div>
+      </div>
+
+      <!-- Market Filter Pills -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+        <button onclick="filterMarket('ALL')" class="market-pill px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-forestSlate text-white shadow-sm">
+          All Markets (<span id="count-all">0</span>)
+        </button>
+        <button onclick="filterMarket('BET_OF_THE_DAY')" class="market-pill px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-white text-coolGray hover:bg-slate-100 border border-slate-200">
+          ⭐ Bet of the Day
+        </button>
+        <button onclick="filterMarket('SURE_BET')" class="market-pill px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-white text-coolGray hover:bg-slate-100 border border-slate-200">
+          🎯 Sure Bets (80%+)
+        </button>
+        <button onclick="filterMarket('1X2')" class="market-pill px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-white text-coolGray hover:bg-slate-100 border border-slate-200">
+          1X2 Market
+        </button>
+        <button onclick="filterMarket('BTTS')" class="market-pill px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-white text-coolGray hover:bg-slate-100 border border-slate-200">
+          BTTS
+        </button>
+        <button onclick="filterMarket('OVER_2_5')" class="market-pill px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-white text-coolGray hover:bg-slate-100 border border-slate-200">
+          Over 2.5 Goals
+        </button>
+      </div>
+
+      <!-- VIP Status Bar -->
+      <div class="flex items-center justify-between bg-white px-4 py-3 rounded-xl border border-slate-200 text-xs">
+        <div class="flex items-center gap-2">
+          <i data-lucide="shield-check" class="w-4 h-4 text-sageGreen"></i>
+          <span id="vip-status-text" class="font-medium text-coolGray">Viewing Mode: <strong class="text-forestSlate">Free Tier</strong> (VIP Tips Locked)</span>
+        </div>
+        <button onclick="toggleVIPPreview()" id="vip-toggle-btn" class="font-semibold text-warmAmber hover:underline">
+          Simulate VIP Access ✨
+        </button>
+      </div>
+
+      <!-- Match Cards Grid -->
+      <div id="matches-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Injected dynamically by JS -->
+      </div>
+    </section>
+
+    <!-- VIEW 2: ACCUMULATOR BUILDER -->
+    <section id="view-accumulator" class="hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div>
+            <h2 class="text-xl font-bold text-forestSlate flex items-center gap-2">
+              <i data-lucide="ticket" class="w-5 h-5 text-warmAmber"></i> Auto-Generated Consensus Accumulator
+            </h2>
+            <p class="text-xs text-coolGray">Combined multi-match selections for the selected date.</p>
+          </div>
+          <div class="bg-amber-50 text-warmAmber border border-amber-200 px-4 py-2 rounded-xl text-sm font-bold">
+            Total Slip Odds: <span id="acc-total-odds">16.20x</span>
+          </div>
+        </div>
+
+        <div id="accumulator-items" class="space-y-3"></div>
+
+        <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <div class="text-xs text-coolGray">🔒 VIP Accumulators require an active subscription.</div>
+          <div class="flex gap-3 w-full sm:w-auto">
+            <button onclick="shareSlipModal()" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-forestSlate text-xs font-semibold transition">
+              <i data-lucide="share-2" class="w-4 h-4"></i> Share Slip
+            </button>
+            <button onclick="openPricingModal()" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-6 py-2 rounded-xl bg-warmAmber hover:bg-amber-700 text-white text-xs font-bold shadow-md transition">
+              Unlock All Accas (UGX 15,000)
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 3: TRACK RECORD -->
+    <section id="view-tracker" class="hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-6">
         <div>
-          <div class="text-2xl font-black text-sageGreen" id="total-matches-count">6</div>
-          <div class="text-[11px] text-slate-300 font-medium uppercase">Upcoming Today</div>
+          <h2 class="text-xl font-bold text-forestSlate">Verified Track Record</h2>
+          <p class="text-xs text-coolGray">Automatically updated grading log.</p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div class="bg-alabaster p-4 rounded-xl border border-slate-200 text-center">
+            <div class="text-2xl font-black text-forestSlate">1,140</div>
+            <div class="text-xs text-coolGray">Total Tips</div>
+          </div>
+          <div class="bg-alabaster p-4 rounded-xl border border-slate-200 text-center">
+            <div class="text-2xl font-black text-sageGreen">985</div>
+            <div class="text-xs text-coolGray">Won ✅</div>
+          </div>
+          <div class="bg-alabaster p-4 rounded-xl border border-slate-200 text-center">
+            <div class="text-2xl font-black text-red-500">155</div>
+            <div class="text-xs text-coolGray">Lost ❌</div>
+          </div>
+          <div class="bg-alabaster p-4 rounded-xl border border-slate-200 text-center">
+            <div class="text-2xl font-black text-warmAmber">86.4%</div>
+            <div class="text-xs text-coolGray">Accuracy</div>
+          </div>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead>
+              <tr class="border-b border-slate-200 text-coolGray uppercase tracking-wider">
+                <th class="py-3 px-4">Date</th>
+                <th class="py-3 px-4">Match</th>
+                <th class="py-3 px-4">Consensus Tip</th>
+                <th class="py-3 px-4">Agreed</th>
+                <th class="py-3 px-4">Result</th>
+              </tr>
+            </thead>
+            <tbody id="history-table-body" class="divide-y divide-slate-100 font-medium"></tbody>
+          </table>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Filter Bar -->
-    <div class="bg-white p-3 rounded-2xl border border-slate-200 flex flex-wrap items-center justify-between gap-3">
-      <div class="flex items-center gap-2 text-xs font-bold text-forestSlate">
-        <i data-lucide="filter" class="w-4 h-4 text-sageGreen"></i> Filter by Consensus:
-      </div>
-      <div class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0">
-        <button onclick="filterSource('ALL')" class="source-pill px-3 py-1.5 rounded-lg text-xs font-bold bg-forestSlate text-white">All Today's Fixtures</button>
-        <button onclick="filterSource('CONSENSUS_4')" class="source-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-50 text-sageGreen border border-emerald-200">🔥 4/4 Unanimous</button>
-      </div>
-    </div>
-
-    <!-- VIP Toggle Status -->
-    <div class="flex items-center justify-between bg-white px-4 py-3 rounded-xl border border-slate-200 text-xs">
-      <span id="vip-status-text" class="font-medium text-coolGray">Viewing Mode: <strong class="text-forestSlate">Free Tier</strong></span>
-      <button onclick="toggleVIPPreview()" id="vip-toggle-btn" class="font-semibold text-warmAmber hover:underline">Simulate VIP Access ✨</button>
-    </div>
-
-    <!-- Match Cards Grid -->
-    <div id="matches-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
   </main>
 
   <!-- Pricing Modal -->
   <div id="pricing-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-6 relative">
-      <button onclick="closePricingModal()" class="absolute top-4 right-4 p-2 rounded-full hover:bg-slate-100 text-coolGray"><i data-lucide="x" class="w-5 h-5"></i></button>
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-slate-100 space-y-6 relative">
+      <button onclick="closePricingModal()" class="absolute top-4 right-4 p-2 rounded-full hover:bg-slate-100 text-coolGray">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
       <div class="text-center space-y-2">
+        <div class="w-12 h-12 rounded-2xl bg-amber-100 text-warmAmber mx-auto flex items-center justify-center">
+          <i data-lucide="crown" class="w-6 h-6"></i>
+        </div>
         <h3 class="text-xl font-bold text-forestSlate">Unlock PitchPulse VIP</h3>
-        <p class="text-xs text-coolGray">Unlock 4/4 Consensus Sure Bets & Exact Scorelines.</p>
+        <p class="text-xs text-coolGray">Unlock 4/4 Consensus Sure Bets, Sports Mole Exact Scorelines, and Daily Combos.</p>
       </div>
-      <label class="block border-2 border-forestSlate bg-slate-50 p-4 rounded-2xl cursor-pointer">
-        <input type="radio" name="subscription_plan" value="weekly" checked class="mr-2">
-        <span class="font-bold text-sm text-forestSlate">Weekly Pass — UGX 15,000 (~ $4 USD)</span>
-      </label>
-      <input type="tel" id="subscriber-phone" placeholder="Mobile Money Number (0707943131)" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm">
-      <button onclick="initiatePayment()" class="w-full py-3.5 rounded-xl bg-forestSlate text-white font-bold text-sm shadow-lg">Pay Securely via Mobile Money</button>
+
+      <div class="space-y-3">
+        <label class="block cursor-pointer border-2 border-forestSlate bg-slate-50 p-4 rounded-2xl relative transition">
+          <input type="radio" name="subscription_plan" value="weekly" checked class="absolute top-4 right-4 accent-forestSlate">
+          <div class="font-bold text-sm text-forestSlate">Weekly Pass (7 Days)</div>
+          <div class="text-lg font-black text-warmAmber mt-1">UGX 15,000 <span class="text-xs font-normal text-coolGray">(~ $4 USD)</span></div>
+        </label>
+        <label class="block cursor-pointer border-2 border-slate-200 p-4 rounded-2xl relative transition">
+          <input type="radio" name="subscription_plan" value="monthly" class="absolute top-4 right-4 accent-forestSlate">
+          <div class="font-bold text-sm text-forestSlate">Monthly Pro Pass (30 Days)</div>
+          <div class="text-lg font-black text-warmAmber mt-1">UGX 45,000 <span class="text-xs font-normal text-coolGray">(~ $12 USD)</span></div>
+        </label>
+      </div>
+
+      <div class="space-y-3">
+        <div>
+          <label class="block text-xs font-semibold text-coolGray mb-1">Your Email Address</label>
+          <input type="email" id="subscriber-email" placeholder="joe@gmail.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-coolGray mb-1">Mobile Money / Phone Number</label>
+          <input type="tel" id="subscriber-phone" placeholder="0707943131" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none">
+        </div>
+      </div>
+
+      <button onclick="initiateFlutterwavePayment()" class="w-full py-3.5 rounded-xl bg-forestSlate hover:bg-slate-900 text-white font-bold text-sm shadow-lg transition flex items-center justify-center gap-2">
+        <i data-lucide="lock" class="w-4 h-4 text-sageGreen"></i> Pay Securely via Mobile Money / Card
+      </button>
     </div>
   </div>
+
+  <!-- Share Modal -->
+  <div id="share-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-slate-100 space-y-4 text-center">
+      <h3 class="text-lg font-bold text-forestSlate">Share Slip</h3>
+      <div id="share-text-box" class="bg-alabaster p-4 rounded-2xl border border-slate-200 text-xs text-left font-mono text-forestSlate select-all"></div>
+      <div class="flex gap-2">
+        <button onclick="closeShareModal()" class="flex-1 py-2.5 rounded-xl bg-slate-100 text-xs font-semibold">Cancel</button>
+        <button onclick="copyShareText()" class="flex-1 py-2.5 rounded-xl bg-forestSlate text-white text-xs font-bold">Copy Slip</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-white border-t border-slate-200 mt-12 py-8 text-center text-xs text-coolGray space-y-2">
+    <p>© 2026 PitchPulse.io • Auto-Rolling Consensus Football Analytics. All rights reserved.</p>
+  </footer>
 
   <script>
     lucide.createIcons();
 
-    // Today's Upcoming Matches (Nov 17, 2026) across SoccerVista, Sports Mole, Forebet, and AI
-    const todaysFixtures = [
-      {
-        id: 1,
-        league: "UEFA Nations League • League A",
-        time: "22:45 EAT",
-        home: "Croatia",
-        away: "Portugal",
-        tip: "Both Teams to Score (BTTS)",
-        odds: "1.78",
-        conf: 86,
-        consensus: 4,
-        vip: true,
-        sv: "GG / BTTS",
-        sm: "Croatia 1-1 Portugal",
-        fb: "BTTS Yes (68%)",
-        ai: "BTTS & Over 1.5"
-      },
-      {
-        id: 2,
-        league: "UEFA Nations League • League A",
-        time: "22:45 EAT",
-        home: "Spain",
-        away: "Switzerland",
-        tip: "Home Win & Over 1.5",
-        odds: "1.95",
-        conf: 90,
-        consensus: 4,
-        vip: true,
-        sv: "1 (Over 2.5)",
-        sm: "Spain 2-1 Switzerland",
-        fb: "1 (71% Prob)",
-        ai: "Home Win & Over"
-      },
-      {
-        id: 3,
-        league: "UEFA Nations League • League A",
-        time: "22:45 EAT",
-        home: "Poland",
-        away: "Scotland",
-        tip: "Double Chance 1X & Under 3.5",
-        odds: "1.55",
-        conf: 84,
-        consensus: 4,
-        vip: false,
-        sv: "1X & U3.5",
-        sm: "Poland 1-0 Scotland",
-        fb: "1X (74% Prob)",
-        ai: "1X & Under 3.5"
-      },
-      {
-        id: 4,
-        league: "Africa Cup of Nations Qualifiers",
-        time: "17:00 EAT",
-        home: "Nigeria",
-        away: "Rwanda",
-        tip: "Home Win (1X2)",
-        odds: "1.40",
-        conf: 93,
-        consensus: 4,
-        vip: false,
-        sv: "1 (Home Win)",
-        sm: "Nigeria 2-0 Rwanda",
-        fb: "1 (82% Prob)",
-        ai: "Home Win (1)"
-      },
-      {
-        id: 5,
-        league: "Africa Cup of Nations Qualifiers",
-        time: "19:00 EAT",
-        home: "Uganda",
-        away: "Congo",
-        tip: "Home Win or Draw & Under 2.5",
-        odds: "1.68",
-        conf: 88,
-        consensus: 3,
-        vip: true,
-        sv: "1X (Under 2.5)",
-        sm: "Uganda 1-0 Congo",
-        fb: "1X (69% Prob)",
-        ai: "1X & Under 2.5"
-      },
-      {
-        id: 6,
-        league: "International Friendly",
-        time: "20:00 EAT",
-        home: "Sweden",
-        away: "Estonia",
-        tip: "Home Win & Over 2.5 Goals",
-        odds: "2.10",
-        conf: 89,
-        consensus: 4,
-        vip: true,
-        sv: "1 (Over 2.5)",
-        sm: "Sweden 3-0 Estonia",
-        fb: "1 (77% Prob)",
-        ai: "Home & Over 2.5"
-      }
-    ];
+    // Auto-Generating Dates & Fixtures for Today, Tomorrow, and Day After
+    const todayDate = new Date();
+    
+    function formatDateString(d) {
+      return d.toISOString().split('T')[0];
+    }
 
+    const dateMap = {
+      0: formatDateString(todayDate),
+      1: formatDateString(new Date(todayDate.getTime() + 86400000)),
+      2: formatDateString(new Date(todayDate.getTime() + 172800000))
+    };
+
+    let selectedDayIndex = 0;
+
+    // Master Fixtures Database mapped to rolling dates
+    const masterFixtures = {
+      [dateMap[0]]: [
+        { id: 501, league: "UEFA Nations League", time: "22:45 EAT", home: "Germany", away: "Netherlands", tip: "Home Win & Over 2.5", odds: "2.45", confidence: 88, category: "BET_OF_THE_DAY", vip: true, consensusCount: 4, sources: { soccerVista: "1 (O2.5)", sportsMole: "Germany 2-1", forebet: "1 (64%)", pitchPulse: "Home & O2.5" } },
+        { id: 502, league: "UEFA Nations League", time: "22:45 EAT", home: "Greece", away: "Serbia", tip: "Home Win (1X2)", odds: "1.80", confidence: 85, category: "SURE_BET", vip: true, consensusCount: 4, sources: { soccerVista: "1", sportsMole: "Greece 3-1", forebet: "1 (59%)", pitchPulse: "Home Win" } },
+        { id: 503, league: "UEFA Nations League", time: "22:45 EAT", home: "Switzerland", away: "Scotland", tip: "Double Chance 1X & U3.5", odds: "1.55", confidence: 84, category: "DOUBLE_CHANCE", vip: false, consensusCount: 4, sources: { soccerVista: "1X", sportsMole: "Switzerland 2-1", forebet: "1 (55%)", pitchPulse: "1X & U3.5" } },
+        { id: 504, league: "Africa Cup Qualifiers", time: "19:00 EAT", home: "Central African Rep.", away: "Benin", tip: "Away Win (2) & Under 2.5", odds: "2.10", confidence: 82, category: "SURE_BET", vip: true, consensusCount: 4, sources: { soccerVista: "2", sportsMole: "Benin 1-0", forebet: "2 (58%)", pitchPulse: "Away Win" } }
+      ],
+      [dateMap[1]]: [
+        { id: 505, league: "UEFA Champions League", time: "23:00 EAT", home: "Real Madrid", away: "Inter Milan", tip: "Both Teams to Score (BTTS)", odds: "1.72", confidence: 87, category: "BTTS", vip: false, consensusCount: 4, sources: { soccerVista: "BTTS Yes", sportsMole: "2-2 Draw", forebet: "BTTS (68%)", pitchPulse: "BTTS Yes" } },
+        { id: 506, league: "UEFA Champions League", time: "23:00 EAT", home: "Bayern Munich", away: "Paris Saint-Germain", tip: "Over 2.5 Goals", odds: "1.65", confidence: 90, category: "OVER_2_5", vip: true, consensusCount: 4, sources: { soccerVista: "Over 2.5", sportsMole: "Bayern 3-2", forebet: "O2.5 (74%)", pitchPulse: "Over 2.5 Goals" } },
+        { id: 507, league: "Copa Libertadores", time: "03:00 EAT", home: "River Plate", away: "Flamengo", tip: "Home Win (1X2)", odds: "2.05", confidence: 79, category: "1X2", vip: true, consensusCount: 3, sources: { soccerVista: "1", sportsMole: "River 1-0", forebet: "X2", pitchPulse: "Home Win" } }
+      ],
+      [dateMap[2]]: [
+        { id: 508, league: "English Premier League", time: "15:30 EAT", home: "Arsenal", away: "Tottenham", tIP: "Home Win & Over 1.5", odds: "1.95", tip: "Home Win & Over 1.5", confidence: 89, category: "BET_OF_THE_DAY", vip: true, consensusCount: 4, sources: { soccerVista: "1 (O1.5)", sportsMole: "Arsenal 2-0", forebet: "1 (71%)", pitchPulse: "Home & O1.5" } },
+        { id: 509, league: "English Premier League", time: "18:00 EAT", home: "Liverpool", away: "Chelsea", tip: "Both Teams to Score (BTTS)", odds: "1.68", confidence: 83, category: "BTTS", vip: false, consensusCount: 3, sources: { soccerVista: "BTTS", sportsMole: "1-1 Draw", forebet: "BTTS", pitchPulse: "BTTS Yes" } }
+      ]
+    };
+
+    let currentMarketFilter = "ALL";
     let currentSourceFilter = "ALL";
     let isVIPUnlocked = localStorage.getItem("pitchpulse_vip_active") === "true";
 
     function initApp() {
-      const optionsDate = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric', year: 'numeric' });
-      document.getElementById("header-date-badge").innerText = `Multi-Source Consensus • Active Date: ${optionsDate}`;
+      renderDayTabs();
       renderMatches();
+      renderAccumulator();
+      renderHistory();
       updateVIPStatusUI();
+    }
+
+    function renderDayTabs() {
+      const container = document.getElementById("day-tabs-container");
+      const labels = ["Today", "Tomorrow", "In 2 Days"];
+      container.innerHTML = [0, 1, 2].map(i => `
+        <button onclick="switchDay(${i})" class="px-3 py-1.5 rounded-xl text-xs font-bold transition ${selectedDayIndex === i ? 'bg-forestSlate text-white shadow-sm' : 'bg-slate-100 text-coolGray hover:bg-slate-200'}">
+          ${labels[i]} (${dateMap[i]})
+        </button>
+      `).join('');
+    }
+
+    function switchDay(index) {
+      selectedDayIndex = index;
+      renderDayTabs();
+      const labels = ["Today", "Tomorrow", "In 2 Days"];
+      document.getElementById("hero-title").innerText = `Predictions for ${labels[index]} (${dateMap[index]})`;
+      renderMatches();
+      renderAccumulator();
     }
 
     function renderMatches() {
       const grid = document.getElementById("matches-grid");
-      const filtered = currentSourceFilter === "ALL" ? todaysFixtures : todaysFixtures.filter(m => m.consensus === 4);
-      document.getElementById("total-matches-count").innerText = todaysFixtures.length;
+      const currentDateKey = dateMap[selectedDayIndex];
+      const dayFixtures = masterFixtures[currentDateKey] || [];
+
+      const filtered = dayFixtures.filter(m => {
+        const marketOk = currentMarketFilter === "ALL" || m.category === currentMarketFilter;
+        let sourceOk = true;
+        if (currentSourceFilter === "CONSENSUS_4") sourceOk = m.consensusCount === 4;
+        if (currentSourceFilter === "SOCCERVISTA") sourceOk = Boolean(m.sources.soccerVista);
+        if (currentSourceFilter === "SPORTSMOLE") sourceOk = Boolean(m.sources.sportsMole);
+        if (currentSourceFilter === "FOREBET") sourceOk = Boolean(m.sources.forebet);
+        return marketOk && sourceOk;
+      });
+
+      document.getElementById("count-all").innerText = dayFixtures.length;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div class="col-span-full py-12 text-center text-coolGray bg-white rounded-2xl border border-slate-200">No fixtures match this filter for ${currentDateKey}.</div>`;
+        return;
+      }
 
       grid.innerHTML = filtered.map(m => {
         const isLocked = m.vip && !isVIPUnlocked;
         return `
-          <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between space-y-4 relative overflow-hidden">
+          <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between space-y-4 relative overflow-hidden">
             ${m.vip ? `<div class="absolute top-0 right-0 bg-warmAmber text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl">VIP</div>` : ''}
+            
             <div class="flex justify-between items-center text-[11px] text-coolGray font-medium pr-8">
               <span class="truncate max-w-[170px]">${m.league}</span>
               <span class="text-forestSlate font-semibold">${m.time}</span>
             </div>
+
             <div class="text-center py-1 space-y-1.5">
               <div class="font-bold text-forestSlate text-base">${m.home} vs ${m.away}</div>
-              <div class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold ${m.consensus === 4 ? 'bg-emerald-50 text-sageGreen border border-emerald-200' : 'bg-amber-50 text-warmAmber border border-amber-200'}">
-                ${m.consensus}/4 Sources Agree
+              <div class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold ${m.consensusCount === 4 ? 'bg-emerald-50 text-sageGreen border border-emerald-200' : 'bg-amber-50 text-warmAmber border border-amber-200'}">
+                <i data-lucide="check-circle-2" class="w-3 h-3"></i> ${m.consensusCount}/4 Sources Agree
               </div>
             </div>
+
             <div class="bg-alabaster rounded-xl p-3 border border-slate-200 flex items-center justify-between">
               <div>
-                <div class="text-[10px] text-coolGray font-bold uppercase">Consensus Pick</div>
+                <div class="text-[10px] text-coolGray font-bold uppercase tracking-wider">Consensus Pick</div>
                 <div class="text-sm font-extrabold text-forestSlate ${isLocked ? 'blur-sm select-none' : ''}">${m.tip}</div>
               </div>
               <div class="text-right">
-                <div class="text-[10px] text-coolGray font-bold uppercase">Odds</div>
+                <div class="text-[10px] text-coolGray font-bold uppercase tracking-wider">Odds</div>
                 <div class="text-sm font-black text-sageGreen ${isLocked ? 'blur-sm select-none' : ''}">${m.odds}</div>
               </div>
             </div>
-            <div class="bg-slate-50 rounded-xl p-3 border border-slate-100 space-y-1 text-[11px]">
-              <div class="flex justify-between"><span class="text-coolGray">SoccerVista:</span><span class="font-bold text-forestSlate ${isLocked ? 'blur-xs' : ''}">${m.sv}</span></div>
-              <div class="flex justify-between"><span class="text-coolGray">Sports Mole:</span><span class="font-bold text-warmAmber ${isLocked ? 'blur-sm' : ''}">${m.sm}</span></div>
-              <div class="flex justify-between"><span class="text-coolGray">Forebet Math:</span><span class="font-bold text-forestSlate ${isLocked ? 'blur-xs' : ''}">${m.fb}</span></div>
-              <div class="flex justify-between"><span class="text-coolGray">PitchPulse AI:</span><span class="font-bold text-sageGreen ${isLocked ? 'blur-xs' : ''}">${m.ai}</span></div>
+
+            <div class="bg-slate-50 rounded-xl p-3 border border-slate-100 space-y-1.5 text-[11px]">
+              <div class="text-[10px] font-bold text-coolGray uppercase tracking-wider mb-1">Engine Breakdown:</div>
+              <div class="flex justify-between"><span class="text-coolGray">SoccerVista:</span><span class="font-bold text-forestSlate ${isLocked ? 'blur-xs select-none' : ''}">${m.sources.soccerVista}</span></div>
+              <div class="flex justify-between"><span class="text-coolGray">Sports Mole (Score):</span><span class="font-bold text-warmAmber ${isLocked ? 'blur-sm select-none' : ''}">${m.sources.sportsMole}</span></div>
+              <div class="flex justify-between"><span class="text-coolGray">Forebet Math:</span><span class="font-bold text-forestSlate ${isLocked ? 'blur-xs select-none' : ''}">${m.sources.forebet}</span></div>
+              <div class="flex justify-between"><span class="text-coolGray">PitchPulse AI:</span><span class="font-bold text-sageGreen ${isLocked ? 'blur-xs select-none' : ''}">${m.sources.pitchPulse}</span></div>
             </div>
+
             <div class="flex items-center justify-between pt-2 border-t border-slate-100 text-xs">
-              <span class="text-coolGray">Confidence: <strong>${m.conf}%</strong></span>
-              ${isLocked ? `<button onclick="openPricingModal()" class="text-warmAmber font-bold hover:underline">Unlock VIP</button>` : `<span class="text-sageGreen font-bold">Unlocked ✓</span>`}
+              <span class="text-coolGray font-medium">Confidence: <strong class="text-forestSlate">${m.confidence}%</strong></span>
+              ${isLocked ? `
+                <button onclick="openPricingModal()" class="text-warmAmber font-bold hover:underline inline-flex items-center gap-1">
+                  <i data-lucide="lock" class="w-3 h-3"></i> Unlock VIP
+                </button>
+              ` : `
+                <button onclick='shareSingleMatch(${JSON.stringify(m)})' class="text-forestSlate hover:text-sageGreen font-semibold inline-flex items-center gap-1">
+                  <i data-lucide="share-2" class="w-3.5 h-3.5"></i> Share
+                </button>
+              `}
             </div>
           </div>
         `;
@@ -277,9 +467,63 @@
       lucide.createIcons();
     }
 
+    function filterMarket(category) {
+      currentMarketFilter = category;
+      document.querySelectorAll('.market-pill').forEach(btn => {
+        btn.className = "market-pill px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-white text-coolGray hover:bg-slate-100 border border-slate-200";
+      });
+      event.currentTarget.className = "market-pill px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-forestSlate text-white shadow-sm";
+      renderMatches();
+    }
+
     function filterSource(source) {
       currentSourceFilter = source;
+      document.querySelectorAll('.source-pill').forEach(btn => {
+        btn.className = "source-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-coolGray hover:bg-slate-200";
+      });
+      event.currentTarget.className = "source-pill px-3 py-1.5 rounded-lg text-xs font-bold bg-forestSlate text-white";
       renderMatches();
+    }
+
+    function renderAccumulator() {
+      const container = document.getElementById("accumulator-items");
+      const currentDateKey = dateMap[selectedDayIndex];
+      const dayFixtures = masterFixtures[currentDateKey] || [];
+      container.innerHTML = dayFixtures.map((m, i) => `
+        <div class="bg-alabaster p-3.5 rounded-xl border border-slate-200 flex justify-between items-center text-xs">
+          <div>
+            <div class="text-coolGray">${m.league} • Match ${i+1}</div>
+            <div class="font-bold text-forestSlate">${m.home} vs ${m.away}</div>
+            <div class="text-sageGreen font-semibold mt-0.5">Tip: ${m.tip}</div>
+          </div>
+          <div class="text-right font-black text-forestSlate text-sm">${m.odds}</div>
+        </div>
+      `).join('');
+    }
+
+    function renderHistory() {
+      const historyBody = document.getElementById("history-table-body");
+      const pastResults = [
+        { date: "Nov 15", match: "Denmark vs Norway", tip: "BTTS & Over 2.5", agreed: "4/4", status: "WON ✅" },
+        { date: "Nov 15", match: "Portugal vs Poland", tip: "Home Win & Over 2.5", agreed: "4/4", status: "WON ✅" }
+      ];
+      historyBody.innerHTML = pastResults.map(r => `
+        <tr class="hover:bg-slate-50">
+          <td class="py-3 px-4 text-coolGray">${r.date}</td>
+          <td class="py-3 px-4 font-bold text-forestSlate">${r.match}</td>
+          <td class="py-3 px-4 text-forestSlate">${r.tip}</td>
+          <td class="py-3 px-4 font-semibold text-sageGreen">${r.agreed}</td>
+          <td class="py-3 px-4 font-bold text-sageGreen">${r.status}</td>
+        </tr>
+      `).join('');
+    }
+
+    function switchTab(tabName) {
+      document.getElementById("view-predictions").classList.add("hidden");
+      document.getElementById("view-accumulator").classList.add("hidden");
+      document.getElementById("view-tracker").classList.add("hidden");
+      document.getElementById(`view-${tabName}`).classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function toggleVIPPreview() {
@@ -294,21 +538,68 @@
       const toggleBtn = document.getElementById("vip-toggle-btn");
       if(isVIPUnlocked) {
         statusText.innerHTML = `Viewing Mode: <strong class="text-sageGreen">VIP Executive Unlocked ✨</strong>`;
-        toggleBtn.innerText = "Lock VIP (Test Free Mode)";
+        toggleBtn.innerText = "Lock VIP";
       } else {
-        statusText.innerHTML = `Viewing Mode: <strong class="text-forestSlate">Free Tier</strong>`;
+        statusText.innerHTML = `Viewing Mode: <strong class="text-forestSlate">Free Tier</strong> (VIP Locked)`;
         toggleBtn.innerText = "Simulate VIP Access ✨";
       }
     }
 
-    function openPricingModal() { document.getElementById("pricing-modal").classList.replace("hidden", "flex"); }
-    function closePricingModal() { document.getElementById("pricing-modal").classList.replace("flex", "hidden"); }
-    function initiatePayment() {
+    function openPricingModal() {
+      document.getElementById("pricing-modal").classList.remove("hidden");
+      document.getElementById("pricing-modal").classList.add("flex");
+    }
+
+    function closePricingModal() {
+      document.getElementById("pricing-modal").classList.add("hidden");
+      document.getElementById("pricing-modal").classList.remove("flex");
+    }
+
+    function initiateFlutterwavePayment() {
       localStorage.setItem("pitchpulse_vip_active", "true");
       isVIPUnlocked = true;
-      alert("Simulated Payment Successful! VIP Unlocked.");
+      alert("Simulated Payment Successful! All VIP tips unlocked.");
       closePricingModal();
       renderMatches();
+    }
+
+    function shareSingleMatch(m) {
+      const shareText = `🔥 PitchPulse Consensus\n⚽ ${m.home} vs ${m.away}\n🏆 ${m.league}\n💡 Tip: ${m.tip} (${m.odds})\n\n• Sports Mole: ${m.sources.sportsMole}\n• Forebet: ${m.sources.forebet}`;
+      document.getElementById("share-text-box").innerText = shareText;
+      document.getElementById("share-modal").classList.remove("hidden");
+      document.getElementById("share-modal").classList.add("flex");
+    }
+
+    function shareSlipModal() {
+      document.getElementById("share-text-box").innerText = "🎟️ PitchPulse Consensus Accumulator Slip\nVerified Multi-Source Picks\nJoin PitchPulse!";
+      document.getElementById("share-modal").classList.remove("hidden");
+      document.getElementById("share-modal").classList.add("flex");
+    }
+
+    function closeShareModal() {
+      document.getElementById("share-modal").classList.add("hidden");
+      document.getElementById("share-modal").classList.remove("flex");
+    }
+
+    function copyShareText() {
+      navigator.clipboard.writeText(document.getElementById("share-text-box").innerText);
+      alert("Copied!");
+      closeShareModal();
+    }
+
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      document.getElementById("install-btn").classList.remove("hidden");
+    });
+
+    function installPWA() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+      } else {
+        alert("Tap your browser menu (...) and select 'Add to Home Screen'.");
+      }
     }
 
     window.onload = initApp;
