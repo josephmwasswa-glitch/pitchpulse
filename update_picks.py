@@ -11,7 +11,6 @@ HEADERS_WEB = {
 }
 
 def scrape_sportsmole():
-    """Scrapes Sports Mole's daily match previews and predicted scorelines."""
     previews = {}
     try:
         res = requests.get("https://www.sportsmole.co.uk/football/preview/", headers=HEADERS_WEB, timeout=15)
@@ -72,7 +71,7 @@ def fetch_real_fixtures():
     sportsmole_data = scrape_sportsmole()
     all_days = {}
 
-    for offset in range(3):  # Today, Tomorrow, +2 Days
+    for offset in range(3):
         target_date = (datetime.now(timezone.utc) + timedelta(days=offset)).strftime("%Y-%m-%d")
         day_matches = []
 
