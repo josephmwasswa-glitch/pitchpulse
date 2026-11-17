@@ -1,0 +1,180 @@
+{
+  "updated_at": "2026-11-17T04:56:53.488750+00:00",
+  "fixtures_by_date": {
+    "2026-11-17": [
+      {
+        "id": 1646421,
+        "league": "Kings Cup",
+        "time": "00:00 UTC",
+        "home": "Dendele",
+        "away": "Loud",
+        "tip": "No predictions available",
+        "odds": "1.85",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Dendele 2-1 Loud",
+          "forebet": "1 (33%)",
+          "pitchPulse": "No predictions available"
+        }
+      },
+      {
+        "id": 1649033,
+        "league": "CONCACAF Nations League",
+        "time": "00:00 UTC",
+        "home": "Martinique",
+        "away": "Aruba",
+        "tip": "Double chance : draw or Aruba",
+        "odds": "1.85",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Martinique 2-1 Aruba",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : draw or Aruba"
+        }
+      },
+      {
+        "id": 1649034,
+        "league": "CONCACAF Nations League",
+        "time": "00:00 UTC",
+        "home": "Trinidad and Tobago",
+        "away": "Antigua and Barbuda",
+        "tip": "Double chance : draw or Antigua and Barbuda",
+        "odds": "1.85",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Trinidad and Tobago 2-1 Antigua and Barbuda",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : draw or Antigua and Barbuda"
+        }
+      },
+      {
+        "id": 1647127,
+        "league": "Division di Honor",
+        "time": "00:30 UTC",
+        "home": "Nacional",
+        "away": "La Fama",
+        "tip": "Combo Double chance : draw or La Fama and +1.5 goals",
+        "odds": "1.85",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Nacional 2-1 La Fama",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Combo Double chance : draw or La Fama and +1.5 goals"
+        }
+      },
+      {
+        "id": 1644694,
+        "league": "CONCACAF Nations League",
+        "time": "01:00 UTC",
+        "home": "Canada",
+        "away": "Guatemala",
+        "tip": "Combo Double chance : Canada or draw and +1.5 goals",
+        "odds": "1.85",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Canada 2-1 Guatemala",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Combo Double chance : Canada or draw and +1.5 goals"
+        }
+      },
+      {
+        "id": 1648349,
+        "league": "Liga de Ascenso",
+        "time": "01:00 UTC",
+        "home": "Pitbulls Santa Barbara FC",
+        "away": "Rosario",
+        "tip": "Double chance : draw or Rosario",
+        "odds": "1.85",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Pitbulls Santa Barbara FC 2-1 Rosario",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : draw or Rosario"
+        }
+      },
+      {
+        "id": 1650163,
+        "league": "Premier League",
+        "time": "01:00 UTC",
+        "home": "Waterhouse",
+        "away": "Mount Pleasant Academy",
+        "tip": "Double chance : draw or Mount Pleasant Academy",
+        "odds": "1.85",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Waterhouse 2-1 Mount Pleasant Academy",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : draw or Mount Pleasant Academy"
+        }
+      },
+      {
+        "id": 1649528,
+        "league": "USL Championship",
+        "time": "02:00 UTC",
+        "home": "New Mexico United",
+        "away": "Sacramento Republic",
+        "tip": "Double chance : draw or Sacramento Republic",
+        "odds": "1.85",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "New Mexico United 2-1 Sacramento Republic",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : draw or Sacramento Republic"
+        }
+      },
+      {
+        "id": 1636040,
+        "league": "Primera Premier",
+        "time": "02:05 UTC",
+        "home": "Irapuato",
+        "away": "Celaya",
+        "tip": "Double chance : Irapuato or draw",
+        "odds": "1.85",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Irapuato 2-1 Celaya",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : Irapuato or draw"
+        }
+      }
+    ],
+    "2026-11-18": [],
+    "2026-11-19": []
+  }
+}
