@@ -1,180 +1,180 @@
 {
-  "updated_at": "2026-11-17T04:56:53.488750+00:00",
+  "updated_at": "2026-11-18T02:15:20.931145+00:00",
   "fixtures_by_date": {
-    "2026-11-17": [
+    "2026-11-18": [
       {
-        "id": 1646421,
-        "league": "Kings Cup",
-        "time": "00:00 UTC",
-        "home": "Dendele",
-        "away": "Loud",
-        "tip": "No predictions available",
-        "odds": "1.85",
+        "id": 1644695,
+        "league": "CONCACAF Nations League",
+        "time": "02:30 UTC",
+        "home": "Mexico",
+        "away": "Jamaica",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
         "confidence": 65,
         "category": "1X2",
         "vip": true,
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Dendele 2-1 Loud",
+          "sportsMole": "Mexico 2-1 Jamaica",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Combo Double chance : Mexico or draw and +1.5 goals"
+        }
+      },
+      {
+        "id": 1649036,
+        "league": "CONCACAF Nations League",
+        "time": "03:00 UTC",
+        "home": "Nicaragua",
+        "away": "Montserrat",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Nicaragua 2-1 Montserrat",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : draw or Montserrat"
+        }
+      },
+      {
+        "id": 1560981,
+        "league": "WE League",
+        "time": "04:00 UTC",
+        "home": "JEF United W",
+        "away": "Parceiro Nagano W",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "JEF United W 2-1 Parceiro Nagano W",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Combo Double chance : JEF United W or draw and -3.5 goals"
+        }
+      },
+      {
+        "id": 1560979,
+        "league": "WE League",
+        "time": "05:00 UTC",
+        "home": "Albirex Niigata W",
+        "away": "Elfen Saitama W",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Albirex Niigata W 2-1 Elfen Saitama W",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : Albirex Niigata W or draw"
+        }
+      },
+      {
+        "id": 1560982,
+        "league": "WE League",
+        "time": "05:00 UTC",
+        "home": "Vegalta Sendai W",
+        "away": "Tokyo Verdy Beleza W",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Vegalta Sendai W 2-1 Tokyo Verdy Beleza W",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : draw or Tokyo Verdy Beleza W"
+        }
+      },
+      {
+        "id": 1650692,
+        "league": "Liga Nusantara",
+        "time": "08:00 UTC",
+        "home": "Pesinga Ngawi",
+        "away": "Putra Sang Fajar",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Pesinga Ngawi 2-1 Putra Sang Fajar",
+          "forebet": "1 (50%)",
+          "pitchPulse": "Combo Winner : Putra Sang Fajar and -3.5 goals"
+        }
+      },
+      {
+        "id": 1650689,
+        "league": "Liga Nusantara",
+        "time": "08:30 UTC",
+        "home": "Ngada",
+        "away": "Donggala United",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Ngada 2-1 Donggala United",
+          "forebet": "1 (50%)",
+          "pitchPulse": "Combo Double chance : Ngada or draw and +1.5 goals"
+        }
+      },
+      {
+        "id": 1650690,
+        "league": "Liga Nusantara",
+        "time": "08:30 UTC",
+        "home": "Persikutim",
+        "away": "Persipani Paniai",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Persikutim 2-1 Persipani Paniai",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Winner : Persipani Paniai"
+        }
+      },
+      {
+        "id": 1650691,
+        "league": "Liga Nusantara",
+        "time": "08:30 UTC",
+        "home": "Persinab Nabire",
+        "away": "Perseden Denpasar",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Persinab Nabire 2-1 Perseden Denpasar",
           "forebet": "1 (33%)",
           "pitchPulse": "No predictions available"
         }
-      },
-      {
-        "id": 1649033,
-        "league": "CONCACAF Nations League",
-        "time": "00:00 UTC",
-        "home": "Martinique",
-        "away": "Aruba",
-        "tip": "Double chance : draw or Aruba",
-        "odds": "1.85",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Martinique 2-1 Aruba",
-          "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : draw or Aruba"
-        }
-      },
-      {
-        "id": 1649034,
-        "league": "CONCACAF Nations League",
-        "time": "00:00 UTC",
-        "home": "Trinidad and Tobago",
-        "away": "Antigua and Barbuda",
-        "tip": "Double chance : draw or Antigua and Barbuda",
-        "odds": "1.85",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Trinidad and Tobago 2-1 Antigua and Barbuda",
-          "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : draw or Antigua and Barbuda"
-        }
-      },
-      {
-        "id": 1647127,
-        "league": "Division di Honor",
-        "time": "00:30 UTC",
-        "home": "Nacional",
-        "away": "La Fama",
-        "tip": "Combo Double chance : draw or La Fama and +1.5 goals",
-        "odds": "1.85",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Nacional 2-1 La Fama",
-          "forebet": "1 (45%)",
-          "pitchPulse": "Combo Double chance : draw or La Fama and +1.5 goals"
-        }
-      },
-      {
-        "id": 1644694,
-        "league": "CONCACAF Nations League",
-        "time": "01:00 UTC",
-        "home": "Canada",
-        "away": "Guatemala",
-        "tip": "Combo Double chance : Canada or draw and +1.5 goals",
-        "odds": "1.85",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Canada 2-1 Guatemala",
-          "forebet": "1 (45%)",
-          "pitchPulse": "Combo Double chance : Canada or draw and +1.5 goals"
-        }
-      },
-      {
-        "id": 1648349,
-        "league": "Liga de Ascenso",
-        "time": "01:00 UTC",
-        "home": "Pitbulls Santa Barbara FC",
-        "away": "Rosario",
-        "tip": "Double chance : draw or Rosario",
-        "odds": "1.85",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Pitbulls Santa Barbara FC 2-1 Rosario",
-          "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : draw or Rosario"
-        }
-      },
-      {
-        "id": 1650163,
-        "league": "Premier League",
-        "time": "01:00 UTC",
-        "home": "Waterhouse",
-        "away": "Mount Pleasant Academy",
-        "tip": "Double chance : draw or Mount Pleasant Academy",
-        "odds": "1.85",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Waterhouse 2-1 Mount Pleasant Academy",
-          "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : draw or Mount Pleasant Academy"
-        }
-      },
-      {
-        "id": 1649528,
-        "league": "USL Championship",
-        "time": "02:00 UTC",
-        "home": "New Mexico United",
-        "away": "Sacramento Republic",
-        "tip": "Double chance : draw or Sacramento Republic",
-        "odds": "1.85",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "New Mexico United 2-1 Sacramento Republic",
-          "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : draw or Sacramento Republic"
-        }
-      },
-      {
-        "id": 1636040,
-        "league": "Primera Premier",
-        "time": "02:05 UTC",
-        "home": "Irapuato",
-        "away": "Celaya",
-        "tip": "Double chance : Irapuato or draw",
-        "odds": "1.85",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Irapuato 2-1 Celaya",
-          "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : Irapuato or draw"
-        }
       }
     ],
-    "2026-11-18": [],
-    "2026-11-19": []
+    "2026-11-19": [],
+    "2026-11-20": []
   }
 }
