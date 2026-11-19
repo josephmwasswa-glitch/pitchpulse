@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-11-18T02:15:20.931145+00:00",
+  "updated_at": "2026-11-19T02:12:31.690422+00:00",
   "fixtures_by_date": {
-    "2026-11-18": [
+    "2026-11-19": [
       {
-        "id": 1644695,
-        "league": "CONCACAF Nations League",
-        "time": "02:30 UTC",
-        "home": "Mexico",
-        "away": "Jamaica",
+        "id": 1640368,
+        "league": "Australian Championship",
+        "time": "08:30 UTC",
+        "home": "Preston Lions",
+        "away": "South Hobart",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -16,17 +16,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Mexico 2-1 Jamaica",
+          "sportsMole": "Preston Lions 2-1 South Hobart",
           "forebet": "1 (45%)",
-          "pitchPulse": "Combo Double chance : Mexico or draw and +1.5 goals"
+          "pitchPulse": "Double chance : Preston Lions or draw"
         }
       },
       {
-        "id": 1649036,
-        "league": "CONCACAF Nations League",
-        "time": "03:00 UTC",
-        "home": "Nicaragua",
-        "away": "Montserrat",
+        "id": 1640369,
+        "league": "Australian Championship",
+        "time": "08:30 UTC",
+        "home": "Lions",
+        "away": "Wollongong Wolves",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -35,17 +35,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Nicaragua 2-1 Montserrat",
-          "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : draw or Montserrat"
+          "sportsMole": "Lions 2-1 Wollongong Wolves",
+          "forebet": "1 (35%)",
+          "pitchPulse": "Double chance : Lions or draw"
         }
       },
       {
-        "id": 1560981,
+        "id": 1560983,
         "league": "WE League",
-        "time": "04:00 UTC",
-        "home": "JEF United W",
-        "away": "Parceiro Nagano W",
+        "time": "09:00 UTC",
+        "home": "Omiya Ardija Ventus W",
+        "away": "INAC Kobe Leonessa W",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -54,17 +54,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "JEF United W 2-1 Parceiro Nagano W",
+          "sportsMole": "Omiya Ardija Ventus W 2-1 INAC Kobe Leonessa W",
           "forebet": "1 (45%)",
-          "pitchPulse": "Combo Double chance : JEF United W or draw and -3.5 goals"
+          "pitchPulse": "Winner : INAC Kobe Leonessa W"
         }
       },
       {
-        "id": 1560979,
-        "league": "WE League",
-        "time": "05:00 UTC",
-        "home": "Albirex Niigata W",
-        "away": "Elfen Saitama W",
+        "id": 1630467,
+        "league": "Birinci Dasta",
+        "time": "10:00 UTC",
+        "home": "MOIK",
+        "away": "S\u0259bail",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -73,17 +73,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Albirex Niigata W 2-1 Elfen Saitama W",
+          "sportsMole": "MOIK 2-1 S\u0259bail",
           "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : Albirex Niigata W or draw"
+          "pitchPulse": "Double chance : MOIK or draw"
         }
       },
       {
-        "id": 1560982,
-        "league": "WE League",
-        "time": "05:00 UTC",
-        "home": "Vegalta Sendai W",
-        "away": "Tokyo Verdy Beleza W",
+        "id": 1648286,
+        "league": "Friendlies",
+        "time": "10:00 UTC",
+        "home": "Switzerland U17",
+        "away": "Czechia U17",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -92,17 +92,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Vegalta Sendai W 2-1 Tokyo Verdy Beleza W",
+          "sportsMole": "Switzerland U17 2-1 Czechia U17",
           "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : draw or Tokyo Verdy Beleza W"
+          "pitchPulse": "Combo Double chance : draw or Czechia U17 and +2.5 goals"
         }
       },
       {
-        "id": 1650692,
-        "league": "Liga Nusantara",
-        "time": "08:00 UTC",
-        "home": "Pesinga Ngawi",
-        "away": "Putra Sang Fajar",
+        "id": 1630466,
+        "league": "Birinci Dasta",
+        "time": "10:30 UTC",
+        "home": "Ming\u0259\u00e7evir",
+        "away": "Baku Sportinq",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -111,17 +111,55 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Pesinga Ngawi 2-1 Putra Sang Fajar",
+          "sportsMole": "Ming\u0259\u00e7evir 2-1 Baku Sportinq",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : Ming\u0259\u00e7evir or draw"
+        }
+      },
+      {
+        "id": 1646629,
+        "league": "I-League",
+        "time": "10:30 UTC",
+        "home": "Dempo",
+        "away": "Shillong Lajong",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Dempo 2-1 Shillong Lajong",
+          "forebet": "1 (35%)",
+          "pitchPulse": "Combo Double chance : Dempo or draw and -3.5 goals"
+        }
+      },
+      {
+        "id": 1551236,
+        "league": "ASEAN Club Championship",
+        "time": "12:00 UTC",
+        "home": "Svay Rieng",
+        "away": "Port FC",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Svay Rieng 2-1 Port FC",
           "forebet": "1 (50%)",
-          "pitchPulse": "Combo Winner : Putra Sang Fajar and -3.5 goals"
+          "pitchPulse": "Combo Double chance : draw or Port FC and +2.5 goals"
         }
       },
       {
-        "id": 1650689,
-        "league": "Liga Nusantara",
-        "time": "08:30 UTC",
-        "home": "Ngada",
-        "away": "Donggala United",
+        "id": 1609970,
+        "league": "1st League - RS",
+        "time": "12:00 UTC",
+        "home": "Vele\u017e Nevesinje",
+        "away": "Rudar Prijedor",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -130,51 +168,13 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Ngada 2-1 Donggala United",
+          "sportsMole": "Vele\u017e Nevesinje 2-1 Rudar Prijedor",
           "forebet": "1 (50%)",
-          "pitchPulse": "Combo Double chance : Ngada or draw and +1.5 goals"
-        }
-      },
-      {
-        "id": 1650690,
-        "league": "Liga Nusantara",
-        "time": "08:30 UTC",
-        "home": "Persikutim",
-        "away": "Persipani Paniai",
-        "tip": "Under 2.5 Goals",
-        "odds": "1.70",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Persikutim 2-1 Persipani Paniai",
-          "forebet": "1 (45%)",
-          "pitchPulse": "Winner : Persipani Paniai"
-        }
-      },
-      {
-        "id": 1650691,
-        "league": "Liga Nusantara",
-        "time": "08:30 UTC",
-        "home": "Persinab Nabire",
-        "away": "Perseden Denpasar",
-        "tip": "Under 2.5 Goals",
-        "odds": "1.70",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Persinab Nabire 2-1 Perseden Denpasar",
-          "forebet": "1 (33%)",
-          "pitchPulse": "No predictions available"
+          "pitchPulse": "Combo Double chance : draw or Rudar Prijedor and +1.5 goals"
         }
       }
     ],
-    "2026-11-19": [],
-    "2026-11-20": []
+    "2026-11-20": [],
+    "2026-11-21": []
   }
 }
