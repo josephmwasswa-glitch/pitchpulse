@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-11-19T02:12:31.690422+00:00",
+  "updated_at": "2026-11-20T02:08:01.623142+00:00",
   "fixtures_by_date": {
-    "2026-11-19": [
+    "2026-11-20": [
       {
-        "id": 1640368,
-        "league": "Australian Championship",
-        "time": "08:30 UTC",
-        "home": "Preston Lions",
-        "away": "South Hobart",
+        "id": 1649492,
+        "league": "Major League Soccer",
+        "time": "03:00 UTC",
+        "home": "Seattle Sounders",
+        "away": "Real Salt Lake",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -16,17 +16,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Preston Lions 2-1 South Hobart",
+          "sportsMole": "Seattle Sounders 2-1 Real Salt Lake",
           "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : Preston Lions or draw"
+          "pitchPulse": "Double chance : draw or Real Salt Lake"
         }
       },
       {
-        "id": 1640369,
-        "league": "Australian Championship",
-        "time": "08:30 UTC",
-        "home": "Lions",
-        "away": "Wollongong Wolves",
+        "id": 1632127,
+        "league": "A-League Women",
+        "time": "05:50 UTC",
+        "home": "Western Sydney Wanderers W",
+        "away": "Wellington Phoenix W",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -35,17 +35,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Lions 2-1 Wollongong Wolves",
+          "sportsMole": "Western Sydney Wanderers W 2-1 Wellington Phoenix W",
           "forebet": "1 (35%)",
-          "pitchPulse": "Double chance : Lions or draw"
+          "pitchPulse": "Double chance : Western Sydney Wanderers W or draw"
         }
       },
       {
-        "id": 1560983,
-        "league": "WE League",
-        "time": "09:00 UTC",
-        "home": "Omiya Ardija Ventus W",
-        "away": "INAC Kobe Leonessa W",
+        "id": 1638054,
+        "league": "AFC U17 Asian Cup",
+        "time": "07:30 UTC",
+        "home": "Singapore U17",
+        "away": "Palestine U17",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -54,17 +54,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Omiya Ardija Ventus W 2-1 INAC Kobe Leonessa W",
+          "sportsMole": "Singapore U17 2-1 Palestine U17",
           "forebet": "1 (45%)",
-          "pitchPulse": "Winner : INAC Kobe Leonessa W"
+          "pitchPulse": "Combo Winner : Palestine U17 and +2.5 goals"
         }
       },
       {
-        "id": 1630467,
-        "league": "Birinci Dasta",
-        "time": "10:00 UTC",
-        "home": "MOIK",
-        "away": "S\u0259bail",
+        "id": 1638045,
+        "league": "AFC U17 Asian Cup",
+        "time": "08:00 UTC",
+        "home": "Chinese Taipei U17",
+        "away": "Hong Kong U17",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -73,17 +73,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "MOIK 2-1 S\u0259bail",
+          "sportsMole": "Chinese Taipei U17 2-1 Hong Kong U17",
           "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : MOIK or draw"
+          "pitchPulse": "Combo Winner : Hong Kong U17 and +4.5 goals"
         }
       },
       {
-        "id": 1648286,
-        "league": "Friendlies",
-        "time": "10:00 UTC",
-        "home": "Switzerland U17",
-        "away": "Czechia U17",
+        "id": 1638057,
+        "league": "AFC U17 Asian Cup",
+        "time": "08:00 UTC",
+        "home": "Yemen U17",
+        "away": "Turkmenistan U17",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -92,17 +92,36 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Switzerland U17 2-1 Czechia U17",
+          "sportsMole": "Yemen U17 2-1 Turkmenistan U17",
+          "forebet": "1 (33%)",
+          "pitchPulse": "No predictions available"
+        }
+      },
+      {
+        "id": 1622835,
+        "league": "Liga 1",
+        "time": "08:30 UTC",
+        "home": "Garudayaksa",
+        "away": "Persepam Madura Utd",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Garudayaksa 2-1 Persepam Madura Utd",
           "forebet": "1 (45%)",
-          "pitchPulse": "Combo Double chance : draw or Czechia U17 and +2.5 goals"
+          "pitchPulse": "Double chance : draw or Persepam Madura Utd"
         }
       },
       {
-        "id": 1630466,
-        "league": "Birinci Dasta",
-        "time": "10:30 UTC",
-        "home": "Ming\u0259\u00e7evir",
-        "away": "Baku Sportinq",
+        "id": 1622836,
+        "league": "Liga 1",
+        "time": "08:30 UTC",
+        "home": "PSS Sleman",
+        "away": "Arema FC",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -111,17 +130,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Ming\u0259\u00e7evir 2-1 Baku Sportinq",
+          "sportsMole": "PSS Sleman 2-1 Arema FC",
           "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : Ming\u0259\u00e7evir or draw"
+          "pitchPulse": "Combo Double chance : PSS Sleman or draw and +1.5 goals"
         }
       },
       {
-        "id": 1646629,
-        "league": "I-League",
-        "time": "10:30 UTC",
-        "home": "Dempo",
-        "away": "Shillong Lajong",
+        "id": 1637711,
+        "league": "Liga 2",
+        "time": "08:30 UTC",
+        "home": "PSBS Biak Numfor",
+        "away": "Tornado Pekanbaru",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -130,36 +149,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Dempo 2-1 Shillong Lajong",
-          "forebet": "1 (35%)",
-          "pitchPulse": "Combo Double chance : Dempo or draw and -3.5 goals"
-        }
-      },
-      {
-        "id": 1551236,
-        "league": "ASEAN Club Championship",
-        "time": "12:00 UTC",
-        "home": "Svay Rieng",
-        "away": "Port FC",
-        "tip": "Under 2.5 Goals",
-        "odds": "1.70",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Svay Rieng 2-1 Port FC",
+          "sportsMole": "PSBS Biak Numfor 2-1 Tornado Pekanbaru",
           "forebet": "1 (50%)",
-          "pitchPulse": "Combo Double chance : draw or Port FC and +2.5 goals"
+          "pitchPulse": "Combo Winner : Tornado Pekanbaru and +1.5 goals"
         }
       },
       {
-        "id": 1609970,
-        "league": "1st League - RS",
-        "time": "12:00 UTC",
-        "home": "Vele\u017e Nevesinje",
-        "away": "Rudar Prijedor",
+        "id": 1638047,
+        "league": "AFC U17 Asian Cup",
+        "time": "08:30 UTC",
+        "home": "Indonesia U17",
+        "away": "Myanmar U17",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -168,13 +168,318 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Vele\u017e Nevesinje 2-1 Rudar Prijedor",
+          "sportsMole": "Indonesia U17 2-1 Myanmar U17",
           "forebet": "1 (50%)",
-          "pitchPulse": "Combo Double chance : draw or Rudar Prijedor and +1.5 goals"
+          "pitchPulse": "Winner : Indonesia U17"
+        }
+      },
+      {
+        "id": 1592925,
+        "league": "Liga MX U21",
+        "time": "23:45 UTC",
+        "home": "Club Tijuana U21",
+        "away": "Atlante U21",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Club Tijuana U21 2-1 Atlante U21",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : draw or Atlante U21"
         }
       }
     ],
-    "2026-11-20": [],
-    "2026-11-21": []
+    "2026-11-21": [
+      {
+        "id": 1631815,
+        "league": "Liga Premier Serie A",
+        "time": "00:00 UTC",
+        "home": "FC Santiago",
+        "away": "Dragones de Oaxaca",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "FC Santiago 2-1 Dragones de Oaxaca",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : FC Santiago or draw"
+        }
+      },
+      {
+        "id": 1636041,
+        "league": "Primera Premier",
+        "time": "00:00 UTC",
+        "home": "Chapulineros",
+        "away": "H2O Purepechas",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Chapulineros 2-1 H2O Purepechas",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Combo Double chance : Chapulineros or draw and -3.5 goals"
+        }
+      },
+      {
+        "id": 1639056,
+        "league": "National League - National",
+        "time": "00:00 UTC",
+        "home": "Auckland City",
+        "away": "Napier City Rovers",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Auckland City 2-1 Napier City Rovers",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Combo Double chance : Auckland City or draw and +1.5 goals"
+        }
+      },
+      {
+        "id": 1650837,
+        "league": "Primera Division",
+        "time": "00:00 UTC",
+        "home": "Rancho Santana",
+        "away": "Jalapa",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Rancho Santana 2-1 Jalapa",
+          "forebet": "1 (50%)",
+          "pitchPulse": "Double chance : draw or Jalapa"
+        }
+      },
+      {
+        "id": 1647128,
+        "league": "Division di Honor",
+        "time": "00:30 UTC",
+        "home": "La Fama",
+        "away": "RCA",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "La Fama 2-1 RCA",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : draw or RCA"
+        }
+      },
+      {
+        "id": 1551039,
+        "league": "Liga MX",
+        "time": "01:00 UTC",
+        "home": "Puebla",
+        "away": "Atletico San Luis",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Puebla 2-1 Atletico San Luis",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : draw or Atletico San Luis"
+        }
+      },
+      {
+        "id": 1631817,
+        "league": "Liga Premier Serie A",
+        "time": "01:00 UTC",
+        "home": "Acatlan",
+        "away": "Guerreros del Pacifico",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Acatlan 2-1 Guerreros del Pacifico",
+          "forebet": "1 (33%)",
+          "pitchPulse": "No predictions available"
+        }
+      },
+      {
+        "id": 1639057,
+        "league": "National League - National",
+        "time": "01:00 UTC",
+        "home": "Miramar",
+        "away": "Cashmere Technical",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Miramar 2-1 Cashmere Technical",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : draw or Cashmere Technical"
+        }
+      },
+      {
+        "id": 1570034,
+        "league": "Segunda Divisi\u00f3n",
+        "time": "13:00 UTC",
+        "home": "Sabadell",
+        "away": "Granada CF",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Sabadell 2-1 Granada CF",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Combo Double chance : draw or Granada CF and -3.5 goals"
+        }
+      },
+      {
+        "id": 1570453,
+        "league": "La Liga",
+        "time": "13:00 UTC",
+        "home": "Alaves",
+        "away": "Deportivo La Coruna",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Alaves 2-1 Deportivo La Coruna",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : Alaves or draw"
+        }
+      },
+      {
+        "id": 1573914,
+        "league": "Regionalliga - West",
+        "time": "13:00 UTC",
+        "home": "Lustenau",
+        "away": "Hohenems",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Lustenau 2-1 Hohenems",
+          "forebet": "1 (50%)",
+          "pitchPulse": "Combo Winner : Hohenems and +1.5 goals"
+        }
+      },
+      {
+        "id": 1573915,
+        "league": "Regionalliga - West",
+        "time": "13:00 UTC",
+        "home": "F\u00fcgen",
+        "away": "Kitzb\u00fchel",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "F\u00fcgen 2-1 Kitzb\u00fchel",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Combo Double chance : draw or Kitzb\u00fchel and +1.5 goals"
+        }
+      },
+      {
+        "id": 1573916,
+        "league": "Regionalliga - West",
+        "time": "13:00 UTC",
+        "home": "Lochau",
+        "away": "Kufstein",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Lochau 2-1 Kufstein",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : draw or Kufstein"
+        }
+      },
+      {
+        "id": 1573917,
+        "league": "Regionalliga - West",
+        "time": "13:00 UTC",
+        "home": "R\u00f6this",
+        "away": "Schwaz",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "R\u00f6this 2-1 Schwaz",
+          "forebet": "1 (50%)",
+          "pitchPulse": "Combo Winner : Schwaz and +1.5 goals"
+        }
+      },
+      {
+        "id": 1573918,
+        "league": "Regionalliga - West",
+        "time": "13:00 UTC",
+        "home": "Imst",
+        "away": "Lauterach",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Imst 2-1 Lauterach",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : Imst or draw"
+        }
+      }
+    ],
+    "2026-11-22": []
   }
 }
