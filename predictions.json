@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-11-22T02:05:48.729683+00:00",
+  "updated_at": "2026-11-23T02:15:21.335992+00:00",
   "fixtures_by_date": {
-    "2026-11-22": [
+    "2026-11-23": [
       {
-        "id": 1647130,
+        "id": 1647131,
         "league": "Division di Honor",
         "time": "00:30 UTC",
-        "home": "Sporting",
-        "away": "Dakota",
+        "home": "River Plate",
+        "away": "Britannia",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -16,74 +16,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Sporting 2-1 Dakota",
+          "sportsMole": "River Plate 2-1 Britannia",
           "forebet": "1 (45%)",
-          "pitchPulse": "Winner : Dakota"
+          "pitchPulse": "Combo Double chance : draw or Britannia and +1.5 goals"
         }
       },
       {
-        "id": 1650251,
-        "league": "NWSL Women",
-        "time": "01:00 UTC",
-        "home": "Washington Spirit W",
-        "away": "Kansas City W",
-        "tip": "Under 2.5 Goals",
-        "odds": "1.70",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Washington Spirit W 2-1 Kansas City W",
-          "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : draw or Kansas City W"
-        }
-      },
-      {
-        "id": 1551044,
-        "league": "Liga MX",
-        "time": "03:00 UTC",
-        "home": "Tigres UANL",
-        "away": "Club America",
-        "tip": "Under 2.5 Goals",
-        "odds": "1.70",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Tigres UANL 2-1 Club America",
-          "forebet": "1 (45%)",
-          "pitchPulse": "Combo Double chance : draw or Club America and +1.5 goals"
-        }
-      },
-      {
-        "id": 1639060,
-        "league": "National League - National",
-        "time": "03:00 UTC",
-        "home": "Eastern Suburbs",
-        "away": "Wellington Phoenix II",
-        "tip": "Under 2.5 Goals",
-        "odds": "1.70",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Eastern Suburbs 2-1 Wellington Phoenix II",
-          "forebet": "1 (45%)",
-          "pitchPulse": "Winner : Eastern Suburbs"
-        }
-      },
-      {
-        "id": 1555815,
-        "league": "J3 League",
+        "id": 1560985,
+        "league": "WE League",
         "time": "04:00 UTC",
-        "home": "Roasso Kumamoto",
-        "away": "Kitakyushu",
+        "home": "Albirex Niigata W",
+        "away": "Sanfrecce Hiroshima W",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -92,17 +35,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Roasso Kumamoto 2-1 Kitakyushu",
+          "sportsMole": "Albirex Niigata W 2-1 Sanfrecce Hiroshima W",
           "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : Roasso Kumamoto or draw"
+          "pitchPulse": "Double chance : draw or Sanfrecce Hiroshima W"
         }
       },
       {
-        "id": 1632131,
-        "league": "A-League Women",
+        "id": 1560988,
+        "league": "WE League",
         "time": "04:00 UTC",
-        "home": "Melbourne Victory W",
-        "away": "Perth Glory FC W",
+        "home": "Nojima Stella W",
+        "away": "Omiya Ardija Ventus W",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -111,55 +54,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Melbourne Victory W 2-1 Perth Glory FC W",
+          "sportsMole": "Nojima Stella W 2-1 Omiya Ardija Ventus W",
           "forebet": "1 (35%)",
-          "pitchPulse": "Combo Double chance : Melbourne Victory W or draw and -2.5 goals"
+          "pitchPulse": "Combo Double chance : Nojima Stella W or draw and -3.5 goals"
         }
       },
       {
-        "id": 1640374,
-        "league": "Australian Championship",
-        "time": "04:00 UTC",
-        "home": "Adelaide City",
-        "away": "Broadmeadow Magic",
-        "tip": "Under 2.5 Goals",
-        "odds": "1.70",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Adelaide City 2-1 Broadmeadow Magic",
-          "forebet": "1 (50%)",
-          "pitchPulse": "Double chance : draw or Broadmeadow Magic"
-        }
-      },
-      {
-        "id": 1640375,
-        "league": "Australian Championship",
-        "time": "04:00 UTC",
-        "home": "Avondale",
-        "away": "Wests APIA",
-        "tip": "Under 2.5 Goals",
-        "odds": "1.70",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Avondale 2-1 Wests APIA",
-          "forebet": "1 (50%)",
-          "pitchPulse": "Double chance : draw or Wests APIA"
-        }
-      },
-      {
-        "id": 1510503,
-        "league": "K League 2",
+        "id": 1560989,
+        "league": "WE League",
         "time": "05:00 UTC",
-        "home": "Daegu FC",
-        "away": "Gimhae City",
+        "home": "Parceiro Nagano W",
+        "away": "Urawa Reds W",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -168,13 +73,108 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Daegu FC 2-1 Gimhae City",
+          "sportsMole": "Parceiro Nagano W 2-1 Urawa Reds W",
           "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : Daegu FC or draw"
+          "pitchPulse": "Double chance : draw or Urawa Reds W"
+        }
+      },
+      {
+        "id": 1560986,
+        "league": "WE League",
+        "time": "06:00 UTC",
+        "home": "Tokyo Verdy Beleza W",
+        "away": "INAC Kobe Leonessa W",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Tokyo Verdy Beleza W 2-1 INAC Kobe Leonessa W",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Combo Double chance : Tokyo Verdy Beleza W or draw and +1.5 goals"
+        }
+      },
+      {
+        "id": 1634862,
+        "league": "National League",
+        "time": "09:00 UTC",
+        "home": "Yangon Royals",
+        "away": "Hantharwady United",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Yangon Royals 2-1 Hantharwady United",
+          "forebet": "1 (50%)",
+          "pitchPulse": "Winner : Yangon Royals"
+        }
+      },
+      {
+        "id": 1634863,
+        "league": "National League",
+        "time": "09:30 UTC",
+        "home": "GFA",
+        "away": "Ayeyawady United",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "GFA 2-1 Ayeyawady United",
+          "forebet": "1 (35%)",
+          "pitchPulse": "Combo Double chance : GFA or draw and +1.5 goals"
+        }
+      },
+      {
+        "id": 1646789,
+        "league": "Super League",
+        "time": "10:00 UTC",
+        "home": "Talanta",
+        "away": "Kibera Soccer",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Talanta 2-1 Kibera Soccer",
+          "forebet": "1 (33%)",
+          "pitchPulse": "No predictions available"
+        }
+      },
+      {
+        "id": 1605126,
+        "league": "First League",
+        "time": "10:30 UTC",
+        "home": "Pyunik II",
+        "away": "BKMA II",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Pyunik II 2-1 BKMA II",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : draw or BKMA II"
         }
       }
     ],
-    "2026-11-23": [],
-    "2026-11-24": []
+    "2026-11-24": [],
+    "2026-11-25": []
   }
 }
