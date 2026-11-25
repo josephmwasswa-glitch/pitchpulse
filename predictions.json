@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-11-24T02:15:06.759089+00:00",
+  "updated_at": "2026-11-25T02:20:36.480807+00:00",
   "fixtures_by_date": {
-    "2026-11-24": [
+    "2026-11-25": [
       {
-        "id": 1647132,
-        "league": "Division di Honor",
-        "time": "00:30 UTC",
-        "home": "Bubali",
-        "away": "Estrella",
+        "id": 1555829,
+        "league": "J3 League",
+        "time": "03:00 UTC",
+        "home": "FC Ryukyu",
+        "away": "Roasso Kumamoto",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -16,17 +16,55 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Bubali 2-1 Estrella",
+          "sportsMole": "FC Ryukyu 2-1 Roasso Kumamoto",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : FC Ryukyu or draw"
+        }
+      },
+      {
+        "id": 1649497,
+        "league": "Major League Soccer",
+        "time": "03:00 UTC",
+        "home": "San Jose Earthquakes",
+        "away": "Houston Dynamo",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "San Jose Earthquakes 2-1 Houston Dynamo",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : San Jose Earthquakes or draw"
+        }
+      },
+      {
+        "id": 1555822,
+        "league": "J3 League",
+        "time": "05:00 UTC",
+        "home": "Kitakyushu",
+        "away": "Kanazawa",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Kitakyushu 2-1 Kanazawa",
           "forebet": "1 (35%)",
-          "pitchPulse": "Combo Double chance : Bubali or draw and +1.5 goals"
+          "pitchPulse": "Double chance : Kitakyushu or draw"
         }
       },
       {
-        "id": 1629981,
-        "league": "AFC Champions League Elite",
+        "id": 1630407,
+        "league": "AFC Champions League Two",
         "time": "07:45 UTC",
-        "home": "Newcastle Jets",
-        "away": "Kashiwa Reysol",
+        "home": "Melbourne Victory",
+        "away": "Viettel",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -35,17 +73,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Newcastle Jets 2-1 Kashiwa Reysol",
+          "sportsMole": "Melbourne Victory 2-1 Viettel",
           "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : draw or Kashiwa Reysol"
+          "pitchPulse": "Winner : Melbourne Victory"
         }
       },
       {
-        "id": 1640233,
-        "league": "Federation Cup",
+        "id": 1648382,
+        "league": "League Cup Indonesia",
         "time": "08:30 UTC",
-        "home": "Abahani",
-        "away": "Fakirerpool",
+        "home": "Persiku Kudus",
+        "away": "PSIM Yogyakarta",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -54,17 +92,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Abahani 2-1 Fakirerpool",
-          "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : Abahani or draw"
+          "sportsMole": "Persiku Kudus 2-1 PSIM Yogyakarta",
+          "forebet": "1 (50%)",
+          "pitchPulse": "Combo Double chance : draw or PSIM Yogyakarta and +1.5 goals"
         }
       },
       {
-        "id": 1640234,
-        "league": "Federation Cup",
+        "id": 1650704,
+        "league": "Liga Nusantara",
         "time": "08:30 UTC",
-        "home": "Chattogram",
-        "away": "Brothers Union",
+        "home": "Batavia",
+        "away": "Pesik",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -73,17 +111,36 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Chattogram 2-1 Brothers Union",
+          "sportsMole": "Batavia 2-1 Pesik",
+          "forebet": "1 (50%)",
+          "pitchPulse": "Combo Winner : Batavia and +2.5 goals"
+        }
+      },
+      {
+        "id": 1650705,
+        "league": "Liga Nusantara",
+        "time": "08:30 UTC",
+        "home": "Persekat",
+        "away": "Nusantara United",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Persekat 2-1 Nusantara United",
           "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : draw or Brothers Union"
+          "pitchPulse": "Double chance : Persekat or draw"
         }
       },
       {
-        "id": 1581945,
-        "league": "Persha Liga",
-        "time": "09:00 UTC",
-        "home": "Ahrobiznes Volochysk",
-        "away": "Chernihiv",
+        "id": 1650706,
+        "league": "Liga Nusantara",
+        "time": "08:30 UTC",
+        "home": "Persikota Tangerang",
+        "away": "Persitara",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -92,17 +149,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Ahrobiznes Volochysk 2-1 Chernihiv",
+          "sportsMole": "Persikota Tangerang 2-1 Persitara",
           "forebet": "1 (50%)",
-          "pitchPulse": "Winner : Ahrobiznes Volochysk"
+          "pitchPulse": "Combo Winner : Persikota Tangerang and +1.5 goals"
         }
       },
       {
-        "id": 1648376,
-        "league": "League Cup Indonesia",
+        "id": 1555827,
+        "league": "J3 League",
         "time": "09:00 UTC",
-        "home": "Garudayaksa",
-        "away": "PSS Sleman",
+        "home": "Biwako Shiga",
+        "away": "Kochi United",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -111,70 +168,13 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Garudayaksa 2-1 PSS Sleman",
-          "forebet": "1 (50%)",
-          "pitchPulse": "Combo Double chance : Garudayaksa or draw and +2.5 goals"
-        }
-      },
-      {
-        "id": 1648377,
-        "league": "League Cup Indonesia",
-        "time": "09:00 UTC",
-        "home": "Persebaya Surabaya",
-        "away": "PSBS Biak Numfor",
-        "tip": "Under 2.5 Goals",
-        "odds": "1.70",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Persebaya Surabaya 2-1 PSBS Biak Numfor",
-          "forebet": "1 (50%)",
-          "pitchPulse": "Winner : Persebaya Surabaya"
-        }
-      },
-      {
-        "id": 1648378,
-        "league": "League Cup Indonesia",
-        "time": "09:00 UTC",
-        "home": "Persija",
-        "away": "Sumsel United",
-        "tip": "Under 2.5 Goals",
-        "odds": "1.70",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Persija 2-1 Sumsel United",
-          "forebet": "1 (33%)",
-          "pitchPulse": "No predictions available"
-        }
-      },
-      {
-        "id": 1605133,
-        "league": "First League",
-        "time": "10:00 UTC",
-        "home": "Sardarapat 2",
-        "away": "Ararat II",
-        "tip": "Under 2.5 Goals",
-        "odds": "1.70",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Sardarapat 2 2-1 Ararat II",
+          "sportsMole": "Biwako Shiga 2-1 Kochi United",
           "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : Sardarapat 2 or draw"
+          "pitchPulse": "Double chance : Biwako Shiga or draw"
         }
       }
     ],
-    "2026-11-25": [],
-    "2026-11-26": []
+    "2026-11-26": [],
+    "2026-11-27": []
   }
 }
