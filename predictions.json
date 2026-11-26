@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-11-25T02:20:36.480807+00:00",
+  "updated_at": "2026-11-26T02:18:43.575250+00:00",
   "fixtures_by_date": {
-    "2026-11-25": [
+    "2026-11-26": [
       {
-        "id": 1555829,
-        "league": "J3 League",
-        "time": "03:00 UTC",
-        "home": "FC Ryukyu",
-        "away": "Roasso Kumamoto",
+        "id": 1651503,
+        "league": "Liga MX",
+        "time": "03:10 UTC",
+        "home": "Monterrey",
+        "away": "Club America",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -16,55 +16,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "FC Ryukyu 2-1 Roasso Kumamoto",
-          "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : FC Ryukyu or draw"
-        }
-      },
-      {
-        "id": 1649497,
-        "league": "Major League Soccer",
-        "time": "03:00 UTC",
-        "home": "San Jose Earthquakes",
-        "away": "Houston Dynamo",
-        "tip": "Under 2.5 Goals",
-        "odds": "1.70",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "San Jose Earthquakes 2-1 Houston Dynamo",
-          "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : San Jose Earthquakes or draw"
-        }
-      },
-      {
-        "id": 1555822,
-        "league": "J3 League",
-        "time": "05:00 UTC",
-        "home": "Kitakyushu",
-        "away": "Kanazawa",
-        "tip": "Under 2.5 Goals",
-        "odds": "1.70",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Kitakyushu 2-1 Kanazawa",
+          "sportsMole": "Monterrey 2-1 Club America",
           "forebet": "1 (35%)",
-          "pitchPulse": "Double chance : Kitakyushu or draw"
+          "pitchPulse": "Double chance : Monterrey or draw"
         }
       },
       {
-        "id": 1630407,
-        "league": "AFC Champions League Two",
-        "time": "07:45 UTC",
-        "home": "Melbourne Victory",
-        "away": "Viettel",
+        "id": 1639382,
+        "league": "Taiwan Football Premier League",
+        "time": "07:00 UTC",
+        "home": "AC Taipei",
+        "away": "Hang Yuen",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -73,17 +35,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Melbourne Victory 2-1 Viettel",
-          "forebet": "1 (45%)",
-          "pitchPulse": "Winner : Melbourne Victory"
+          "sportsMole": "AC Taipei 2-1 Hang Yuen",
+          "forebet": "1 (35%)",
+          "pitchPulse": "Combo Double chance : AC Taipei or draw and -3.5 goals"
         }
       },
       {
-        "id": 1648382,
-        "league": "League Cup Indonesia",
+        "id": 1622807,
+        "league": "Liga 1",
         "time": "08:30 UTC",
-        "home": "Persiku Kudus",
-        "away": "PSIM Yogyakarta",
+        "home": "Pusamania Borneo",
+        "away": "Persita",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -92,17 +54,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Persiku Kudus 2-1 PSIM Yogyakarta",
-          "forebet": "1 (50%)",
-          "pitchPulse": "Combo Double chance : draw or PSIM Yogyakarta and +1.5 goals"
+          "sportsMole": "Pusamania Borneo 2-1 Persita",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Winner : Persita"
         }
       },
       {
-        "id": 1650704,
+        "id": 1650707,
         "league": "Liga Nusantara",
         "time": "08:30 UTC",
-        "home": "Batavia",
-        "away": "Pesik",
+        "home": "Donggala United",
+        "away": "Persikutim",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -111,17 +73,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Batavia 2-1 Pesik",
-          "forebet": "1 (50%)",
-          "pitchPulse": "Combo Winner : Batavia and +2.5 goals"
+          "sportsMole": "Donggala United 2-1 Persikutim",
+          "forebet": "1 (35%)",
+          "pitchPulse": "Double chance : Donggala United or draw"
         }
       },
       {
-        "id": 1650705,
+        "id": 1650708,
         "league": "Liga Nusantara",
         "time": "08:30 UTC",
-        "home": "Persekat",
-        "away": "Nusantara United",
+        "home": "Persegres Gresik United",
+        "away": "Persibangga Purbalingga",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -130,17 +92,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Persekat 2-1 Nusantara United",
+          "sportsMole": "Persegres Gresik United 2-1 Persibangga Purbalingga",
           "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : Persekat or draw"
+          "pitchPulse": "Combo Double chance : Persegres Gresik United or draw and -3.5 goals"
         }
       },
       {
-        "id": 1650706,
+        "id": 1650709,
         "league": "Liga Nusantara",
         "time": "08:30 UTC",
-        "home": "Persikota Tangerang",
-        "away": "Persitara",
+        "home": "Persiba Bantul",
+        "away": "Pesinga Ngawi",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -149,17 +111,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Persikota Tangerang 2-1 Persitara",
-          "forebet": "1 (50%)",
-          "pitchPulse": "Combo Winner : Persikota Tangerang and +1.5 goals"
+          "sportsMole": "Persiba Bantul 2-1 Pesinga Ngawi",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Combo Double chance : Persiba Bantul or draw and -3.5 goals"
         }
       },
       {
-        "id": 1555827,
-        "league": "J3 League",
-        "time": "09:00 UTC",
-        "home": "Biwako Shiga",
-        "away": "Kochi United",
+        "id": 1650711,
+        "league": "Liga Nusantara",
+        "time": "08:30 UTC",
+        "home": "Persipani Paniai",
+        "away": "Persinab Nabire",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -168,13 +130,51 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Biwako Shiga 2-1 Kochi United",
+          "sportsMole": "Persipani Paniai 2-1 Persinab Nabire",
           "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : Biwako Shiga or draw"
+          "pitchPulse": "Winner : Persipani Paniai"
+        }
+      },
+      {
+        "id": 1650712,
+        "league": "Liga Nusantara",
+        "time": "08:30 UTC",
+        "home": "Putra Sang Fajar",
+        "away": "Persibo",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Putra Sang Fajar 2-1 Persibo",
+          "forebet": "1 (50%)",
+          "pitchPulse": "Winner : Putra Sang Fajar"
+        }
+      },
+      {
+        "id": 1650817,
+        "league": "Liga Nusantara",
+        "time": "08:30 UTC",
+        "home": "Persekabpas Pasuruan",
+        "away": "Ngada",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Persekabpas Pasuruan 2-1 Ngada",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : Persekabpas Pasuruan or draw"
         }
       }
     ],
-    "2026-11-26": [],
-    "2026-11-27": []
+    "2026-11-27": [],
+    "2026-11-28": []
   }
 }
