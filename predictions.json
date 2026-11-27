@@ -1,13 +1,51 @@
 {
-  "updated_at": "2026-11-26T02:18:43.575250+00:00",
+  "updated_at": "2026-11-27T02:20:46.594900+00:00",
   "fixtures_by_date": {
-    "2026-11-26": [
+    "2026-11-27": [
       {
-        "id": 1651503,
+        "id": 1651504,
+        "league": "Liga MX",
+        "time": "01:00 UTC",
+        "home": "CF Pachuca",
+        "away": "Guadalajara Chivas",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "CF Pachuca 2-1 Guadalajara Chivas",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : draw or Guadalajara Chivas"
+        }
+      },
+      {
+        "id": 1651832,
+        "league": "Liga MX U21",
+        "time": "02:00 UTC",
+        "home": "Juarez U21",
+        "away": "Guadalajara Chivas U21",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Juarez U21 2-1 Guadalajara Chivas U21",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : draw or Guadalajara Chivas U21"
+        }
+      },
+      {
+        "id": 1651502,
         "league": "Liga MX",
         "time": "03:10 UTC",
-        "home": "Monterrey",
-        "away": "Club America",
+        "home": "Leon",
+        "away": "Cruz Azul",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -16,55 +54,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Monterrey 2-1 Club America",
-          "forebet": "1 (35%)",
-          "pitchPulse": "Double chance : Monterrey or draw"
-        }
-      },
-      {
-        "id": 1639382,
-        "league": "Taiwan Football Premier League",
-        "time": "07:00 UTC",
-        "home": "AC Taipei",
-        "away": "Hang Yuen",
-        "tip": "Under 2.5 Goals",
-        "odds": "1.70",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "AC Taipei 2-1 Hang Yuen",
-          "forebet": "1 (35%)",
-          "pitchPulse": "Combo Double chance : AC Taipei or draw and -3.5 goals"
-        }
-      },
-      {
-        "id": 1622807,
-        "league": "Liga 1",
-        "time": "08:30 UTC",
-        "home": "Pusamania Borneo",
-        "away": "Persita",
-        "tip": "Under 2.5 Goals",
-        "odds": "1.70",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Pusamania Borneo 2-1 Persita",
+          "sportsMole": "Leon 2-1 Cruz Azul",
           "forebet": "1 (45%)",
-          "pitchPulse": "Winner : Persita"
+          "pitchPulse": "Double chance : draw or Cruz Azul"
         }
       },
       {
-        "id": 1650707,
-        "league": "Liga Nusantara",
+        "id": 1635018,
+        "league": "V.League 2",
         "time": "08:30 UTC",
-        "home": "Donggala United",
-        "away": "Persikutim",
+        "home": "B\u00f3ng \u0111\u00e1 Hu\u1ebf",
+        "away": "Long An",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -73,36 +73,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Donggala United 2-1 Persikutim",
-          "forebet": "1 (35%)",
-          "pitchPulse": "Double chance : Donggala United or draw"
-        }
-      },
-      {
-        "id": 1650708,
-        "league": "Liga Nusantara",
-        "time": "08:30 UTC",
-        "home": "Persegres Gresik United",
-        "away": "Persibangga Purbalingga",
-        "tip": "Under 2.5 Goals",
-        "odds": "1.70",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Persegres Gresik United 2-1 Persibangga Purbalingga",
+          "sportsMole": "B\u00f3ng \u0111\u00e1 Hu\u1ebf 2-1 Long An",
           "forebet": "1 (45%)",
-          "pitchPulse": "Combo Double chance : Persegres Gresik United or draw and -3.5 goals"
+          "pitchPulse": "Double chance : draw or Long An"
         }
       },
       {
-        "id": 1650709,
-        "league": "Liga Nusantara",
+        "id": 1640125,
+        "league": "Premier League",
         "time": "08:30 UTC",
-        "home": "Persiba Bantul",
-        "away": "Pesinga Ngawi",
+        "home": "Bangladesh Police",
+        "away": "Abahani",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -111,17 +92,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Persiba Bantul 2-1 Pesinga Ngawi",
+          "sportsMole": "Bangladesh Police 2-1 Abahani",
           "forebet": "1 (45%)",
-          "pitchPulse": "Combo Double chance : Persiba Bantul or draw and -3.5 goals"
+          "pitchPulse": "Double chance : Bangladesh Police or draw"
         }
       },
       {
-        "id": 1650711,
-        "league": "Liga Nusantara",
+        "id": 1640126,
+        "league": "Premier League",
         "time": "08:30 UTC",
-        "home": "Persipani Paniai",
-        "away": "Persinab Nabire",
+        "home": "Dhaka Wanderers",
+        "away": "Arambagh",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -130,17 +111,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Persipani Paniai 2-1 Persinab Nabire",
+          "sportsMole": "Dhaka Wanderers 2-1 Arambagh",
           "forebet": "1 (45%)",
-          "pitchPulse": "Winner : Persipani Paniai"
+          "pitchPulse": "Combo Double chance : draw or Arambagh and +1.5 goals"
         }
       },
       {
-        "id": 1650712,
-        "league": "Liga Nusantara",
+        "id": 1640127,
+        "league": "Premier League",
         "time": "08:30 UTC",
-        "home": "Putra Sang Fajar",
-        "away": "Persibo",
+        "home": "Rahmatgonj MFS",
+        "away": "Mohammedan Dhaka",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -149,32 +130,51 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Putra Sang Fajar 2-1 Persibo",
-          "forebet": "1 (50%)",
-          "pitchPulse": "Winner : Putra Sang Fajar"
-        }
-      },
-      {
-        "id": 1650817,
-        "league": "Liga Nusantara",
-        "time": "08:30 UTC",
-        "home": "Persekabpas Pasuruan",
-        "away": "Ngada",
-        "tip": "Under 2.5 Goals",
-        "odds": "1.70",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Persekabpas Pasuruan 2-1 Ngada",
+          "sportsMole": "Rahmatgonj MFS 2-1 Mohammedan Dhaka",
           "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : Persekabpas Pasuruan or draw"
+          "pitchPulse": "Double chance : draw or Mohammedan Dhaka"
+        }
+      },
+      {
+        "id": 1651252,
+        "league": "Australian Championship",
+        "time": "08:30 UTC",
+        "home": "Broadmeadow Magic",
+        "away": "Lions",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Broadmeadow Magic 2-1 Lions",
+          "forebet": "1 (33%)",
+          "pitchPulse": "No predictions available"
+        }
+      },
+      {
+        "id": 1593709,
+        "league": "A-League",
+        "time": "08:40 UTC",
+        "home": "Macarthur",
+        "away": "Melbourne City",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Macarthur 2-1 Melbourne City",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : Macarthur or draw"
         }
       }
     ],
-    "2026-11-27": [],
-    "2026-11-28": []
+    "2026-11-28": [],
+    "2026-11-29": []
   }
 }
