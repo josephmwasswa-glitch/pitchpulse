@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-11-27T02:20:46.594900+00:00",
+  "updated_at": "2026-11-28T02:18:14.540034+00:00",
   "fixtures_by_date": {
-    "2026-11-27": [
+    "2026-11-28": [
       {
-        "id": 1651504,
-        "league": "Liga MX",
-        "time": "01:00 UTC",
-        "home": "CF Pachuca",
-        "away": "Guadalajara Chivas",
+        "id": 1647133,
+        "league": "Division di Honor",
+        "time": "00:30 UTC",
+        "home": "RCA",
+        "away": "Caiquetio",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -16,17 +16,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "CF Pachuca 2-1 Guadalajara Chivas",
+          "sportsMole": "RCA 2-1 Caiquetio",
           "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : draw or Guadalajara Chivas"
+          "pitchPulse": "Combo Double chance : RCA or draw and +1.5 goals"
         }
       },
       {
-        "id": 1651832,
-        "league": "Liga MX U21",
-        "time": "02:00 UTC",
-        "home": "Juarez U21",
-        "away": "Guadalajara Chivas U21",
+        "id": 1651121,
+        "league": "Major League Soccer",
+        "time": "03:00 UTC",
+        "home": "Real Salt Lake",
+        "away": "Vancouver Whitecaps",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -35,112 +35,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Juarez U21 2-1 Guadalajara Chivas U21",
-          "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : draw or Guadalajara Chivas U21"
+          "sportsMole": "Real Salt Lake 2-1 Vancouver Whitecaps",
+          "forebet": "1 (50%)",
+          "pitchPulse": "Double chance : draw or Vancouver Whitecaps"
         }
       },
       {
-        "id": 1651502,
-        "league": "Liga MX",
-        "time": "03:10 UTC",
-        "home": "Leon",
-        "away": "Cruz Azul",
-        "tip": "Under 2.5 Goals",
-        "odds": "1.70",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Leon 2-1 Cruz Azul",
-          "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : draw or Cruz Azul"
-        }
-      },
-      {
-        "id": 1635018,
-        "league": "V.League 2",
-        "time": "08:30 UTC",
-        "home": "B\u00f3ng \u0111\u00e1 Hu\u1ebf",
-        "away": "Long An",
-        "tip": "Under 2.5 Goals",
-        "odds": "1.70",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "B\u00f3ng \u0111\u00e1 Hu\u1ebf 2-1 Long An",
-          "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : draw or Long An"
-        }
-      },
-      {
-        "id": 1640125,
-        "league": "Premier League",
-        "time": "08:30 UTC",
-        "home": "Bangladesh Police",
-        "away": "Abahani",
-        "tip": "Under 2.5 Goals",
-        "odds": "1.70",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Bangladesh Police 2-1 Abahani",
-          "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : Bangladesh Police or draw"
-        }
-      },
-      {
-        "id": 1640126,
-        "league": "Premier League",
-        "time": "08:30 UTC",
-        "home": "Dhaka Wanderers",
-        "away": "Arambagh",
-        "tip": "Under 2.5 Goals",
-        "odds": "1.70",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Dhaka Wanderers 2-1 Arambagh",
-          "forebet": "1 (45%)",
-          "pitchPulse": "Combo Double chance : draw or Arambagh and +1.5 goals"
-        }
-      },
-      {
-        "id": 1640127,
-        "league": "Premier League",
-        "time": "08:30 UTC",
-        "home": "Rahmatgonj MFS",
-        "away": "Mohammedan Dhaka",
-        "tip": "Under 2.5 Goals",
-        "odds": "1.70",
-        "confidence": 65,
-        "category": "1X2",
-        "vip": true,
-        "consensusCount": 4,
-        "sources": {
-          "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Rahmatgonj MFS 2-1 Mohammedan Dhaka",
-          "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : draw or Mohammedan Dhaka"
-        }
-      },
-      {
-        "id": 1651252,
+        "id": 1651253,
         "league": "Australian Championship",
-        "time": "08:30 UTC",
-        "home": "Broadmeadow Magic",
-        "away": "Lions",
+        "time": "04:00 UTC",
+        "home": "Preston Lions",
+        "away": "Wests APIA",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -149,17 +54,17 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Broadmeadow Magic 2-1 Lions",
-          "forebet": "1 (33%)",
-          "pitchPulse": "No predictions available"
+          "sportsMole": "Preston Lions 2-1 Wests APIA",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : Preston Lions or draw"
         }
       },
       {
-        "id": 1593709,
-        "league": "A-League",
-        "time": "08:40 UTC",
-        "home": "Macarthur",
-        "away": "Melbourne City",
+        "id": 1510509,
+        "league": "K League 2",
+        "time": "05:00 UTC",
+        "home": "Gimhae City",
+        "away": "Seongnam FC",
         "tip": "Under 2.5 Goals",
         "odds": "1.70",
         "confidence": 65,
@@ -168,13 +73,470 @@
         "consensusCount": 4,
         "sources": {
           "soccerVista": "1 (Over 2.5)",
-          "sportsMole": "Macarthur 2-1 Melbourne City",
+          "sportsMole": "Gimhae City 2-1 Seongnam FC",
           "forebet": "1 (45%)",
-          "pitchPulse": "Double chance : Macarthur or draw"
+          "pitchPulse": "Double chance : draw or Seongnam FC"
+        }
+      },
+      {
+        "id": 1510514,
+        "league": "K League 2",
+        "time": "05:00 UTC",
+        "home": "Yongin City",
+        "away": "Paju Citizen",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Yongin City 2-1 Paju Citizen",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : Yongin City or draw"
+        }
+      },
+      {
+        "id": 1555834,
+        "league": "J3 League",
+        "time": "05:00 UTC",
+        "home": "Kochi United",
+        "away": "Nara Club",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Kochi United 2-1 Nara Club",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : draw or Nara Club"
+        }
+      },
+      {
+        "id": 1556164,
+        "league": "J1 League",
+        "time": "05:00 UTC",
+        "home": "Kyoto Sanga",
+        "away": "Cerezo Osaka",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Kyoto Sanga 2-1 Cerezo Osaka",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : Kyoto Sanga or draw"
+        }
+      },
+      {
+        "id": 1556168,
+        "league": "J1 League",
+        "time": "05:00 UTC",
+        "home": "Shimizu S-pulse",
+        "away": "Urawa",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Shimizu S-pulse 2-1 Urawa",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : draw or Urawa"
+        }
+      },
+      {
+        "id": 1606786,
+        "league": "J2 League",
+        "time": "05:00 UTC",
+        "home": "Omiya Ardija",
+        "away": "Imabari",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Omiya Ardija 2-1 Imabari",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : Omiya Ardija or draw"
+        }
+      },
+      {
+        "id": 1651517,
+        "league": "Ligue 2",
+        "time": "13:00 UTC",
+        "home": "AS Gabes",
+        "away": "EM Mahdia",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "AS Gabes 2-1 EM Mahdia",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Combo Double chance : draw or EM Mahdia and -3.5 goals"
+        }
+      },
+      {
+        "id": 1651518,
+        "league": "Ligue 2",
+        "time": "13:00 UTC",
+        "home": "CS Chebba",
+        "away": "AS Agareb",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "CS Chebba 2-1 AS Agareb",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : CS Chebba or draw"
+        }
+      },
+      {
+        "id": 1651519,
+        "league": "Ligue 2",
+        "time": "13:00 UTC",
+        "home": "B\u00e9ni-Khalled",
+        "away": "Kerkennah",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "B\u00e9ni-Khalled 2-1 Kerkennah",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Combo Double chance : draw or Kerkennah and -3.5 goals"
+        }
+      },
+      {
+        "id": 1651521,
+        "league": "Ligue 2",
+        "time": "13:00 UTC",
+        "home": "M'saken",
+        "away": "Stade Soussien",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "M'saken 2-1 Stade Soussien",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Combo Double chance : M'saken or draw and -3.5 goals"
+        }
+      },
+      {
+        "id": 1651522,
+        "league": "Ligue 2",
+        "time": "13:00 UTC",
+        "home": "AS Soliman",
+        "away": "Sporting Ben Arous",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "AS Soliman 2-1 Sporting Ben Arous",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Combo Double chance : AS Soliman or draw and -3.5 goals"
+        }
+      },
+      {
+        "id": 1651844,
+        "league": "Premier League",
+        "time": "13:00 UTC",
+        "home": "Nsingizini Hotspurs",
+        "away": "PPK Professionals",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Nsingizini Hotspurs 2-1 PPK Professionals",
+          "forebet": "1 (50%)",
+          "pitchPulse": "Combo Double chance : Nsingizini Hotspurs or draw and -3.5 goals"
         }
       }
     ],
-    "2026-11-28": [],
-    "2026-11-29": []
+    "2026-11-29": [
+      {
+        "id": 1492471,
+        "league": "Serie A",
+        "time": "00:00 UTC",
+        "home": "Botafogo",
+        "away": "Bahia",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Botafogo 2-1 Bahia",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : draw or Bahia"
+        }
+      },
+      {
+        "id": 1631832,
+        "league": "Liga Premier Serie A",
+        "time": "00:00 UTC",
+        "home": "Dragones de Oaxaca",
+        "away": "Calor de San Pedro",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Dragones de Oaxaca 2-1 Calor de San Pedro",
+          "forebet": "1 (50%)",
+          "pitchPulse": "Combo Winner : Dragones de Oaxaca and +1.5 goals"
+        }
+      },
+      {
+        "id": 1631833,
+        "league": "Liga Premier Serie A",
+        "time": "00:00 UTC",
+        "home": "La Tribu de Cd. Juarez",
+        "away": "Mineros de Fresnillo",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "La Tribu de Cd. Juarez 2-1 Mineros de Fresnillo",
+          "forebet": "1 (50%)",
+          "pitchPulse": "Combo Winner : La Tribu de Cd. Juarez and +1.5 goals"
+        }
+      },
+      {
+        "id": 1646486,
+        "league": "Elite Two",
+        "time": "14:30 UTC",
+        "home": "Mintack",
+        "away": "Tonnerre",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Mintack 2-1 Tonnerre",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : Mintack or draw"
+        }
+      },
+      {
+        "id": 1610373,
+        "league": "Oberliga - Mittelrhein",
+        "time": "14:45 UTC",
+        "home": "VfL Vichttal",
+        "away": "Eintracht Hohkeppel",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "VfL Vichttal 2-1 Eintracht Hohkeppel",
+          "forebet": "1 (35%)",
+          "pitchPulse": "Combo Double chance : VfL Vichttal or draw and +2.5 goals"
+        }
+      },
+      {
+        "id": 1650299,
+        "league": "Coupe de France",
+        "time": "14:45 UTC",
+        "home": "La Tamponnaise",
+        "away": "Angoul\u00eame",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "La Tamponnaise 2-1 Angoul\u00eame",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : draw or Angoul\u00eame"
+        }
+      },
+      {
+        "id": 1604073,
+        "league": "Division 1",
+        "time": "14:50 UTC",
+        "home": "Al Saqer",
+        "away": "Al Orubah",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Al Saqer 2-1 Al Orubah",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : Al Saqer or draw"
+        }
+      },
+      {
+        "id": 1549064,
+        "league": "Superliga",
+        "time": "15:00 UTC",
+        "home": "FC Copenhagen",
+        "away": "FC Midtjylland",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "FC Copenhagen 2-1 FC Midtjylland",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : draw or FC Midtjylland"
+        }
+      },
+      {
+        "id": 1556714,
+        "league": "Premiership",
+        "time": "15:00 UTC",
+        "home": "Heart Of Midlothian",
+        "away": "Celtic",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Heart Of Midlothian 2-1 Celtic",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Combo Double chance : draw or Celtic and +1.5 goals"
+        }
+      },
+      {
+        "id": 1558689,
+        "league": "Jupiler Pro League",
+        "time": "15:00 UTC",
+        "home": "Antwerp",
+        "away": "Anderlecht",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Antwerp 2-1 Anderlecht",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : draw or Anderlecht"
+        }
+      },
+      {
+        "id": 1559210,
+        "league": "Challenger Pro League",
+        "time": "15:00 UTC",
+        "home": "Excelsior Virton",
+        "away": "Dender",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Excelsior Virton 2-1 Dender",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Double chance : draw or Dender"
+        }
+      },
+      {
+        "id": 1566440,
+        "league": "Oberliga - Hamburg",
+        "time": "15:00 UTC",
+        "home": "Buchholz",
+        "away": "Sasel",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Buchholz 2-1 Sasel",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Combo Double chance : draw or Sasel and +2.5 goals"
+        }
+      },
+      {
+        "id": 1571229,
+        "league": "Primera Divisi\u00f3n RFEF - Group 2",
+        "time": "15:00 UTC",
+        "home": "Gimnastic",
+        "away": "Teruel",
+        "tip": "Under 2.5 Goals",
+        "odds": "1.70",
+        "confidence": 65,
+        "category": "1X2",
+        "vip": true,
+        "consensusCount": 4,
+        "sources": {
+          "soccerVista": "1 (Over 2.5)",
+          "sportsMole": "Gimnastic 2-1 Teruel",
+          "forebet": "1 (45%)",
+          "pitchPulse": "Winner : Gimnastic"
+        }
+      }
+    ],
+    "2026-11-30": []
   }
 }
